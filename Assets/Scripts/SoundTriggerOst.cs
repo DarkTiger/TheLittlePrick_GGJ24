@@ -19,7 +19,7 @@ public class SoundTriggerOst : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<PlayerTest>() != null)
+        if (other.gameObject.GetComponent<PlayerMovement>() != null)
         {
             onTriggerEnterEvent.Invoke();
 
