@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Sprites/Gardener.meta
 guid: 0e43bdc6d701a2449a85ae44b4be606b
 folderAsset: yes
 DefaultImporter:
+========
+guid: 50b0f2d7992d2e54ca8978ef434d76da
+PrefabImporter:
+>>>>>>>> c4fb85eff9cbc9b6acb2cda111ec197a9564ce66:Assets/Prefabs/Castle.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

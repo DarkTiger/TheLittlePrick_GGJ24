@@ -1,8 +1,14 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Sprites/Item.meta
 guid: c87b8836bb4eaec468fbe314b44f9916
 folderAsset: yes
 DefaultImporter:
+========
+guid: dc2ef62d0fdaa544a98891c204fe28bb
+NativeFormatImporter:
+>>>>>>>> c4fb85eff9cbc9b6acb2cda111ec197a9564ce66:Assets/Materials/Test.mat.meta
   externalObjects: {}
+  mainObjectFileID: 2100000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
