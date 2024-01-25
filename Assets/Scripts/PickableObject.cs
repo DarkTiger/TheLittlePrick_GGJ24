@@ -11,13 +11,9 @@ public enum pickableObjectType
 
 public class PickableObject : Interactable
 {
-    [SerializeField] private string objectName;
-    [SerializeField] private Sprite objectSprite;
-    [SerializeField] private pickableObjectType objectType;
-
-    bool canInteract = true;
-
-    [SerializeField] float canInteractCD = 0.5f;
+    public string objectName;
+    public Sprite objectSprite;
+    public pickableObjectType objectType;
 
     public override void Interact(GameObject interacter)
     {
@@ -27,8 +23,6 @@ public class PickableObject : Interactable
 
         if (playerInventory != null)
         {
-            canInteract = false;
-
             playerInventory.ChangeObject(gameObject);
         }
     }

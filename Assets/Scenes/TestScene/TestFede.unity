@@ -238,7 +238,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &159732383
 RectTransform:
   m_ObjectHideFlags: 0
@@ -572,10 +572,9 @@ MonoBehaviour:
   onInteraction:
     m_PersistentCalls:
       m_Calls: []
-  objectName: 
-  objectSprite: {fileID: 0}
+  objectName: box1
+  objectSprite: {fileID: -663288192, guid: 362cf1b0b36c17740b5a921537a1097b, type: 3}
   objectType: 0
-  canInteractCD: 0
 --- !u!65 &1168899115
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1272,11 +1271,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b50ba25ce5a9c34dbb4584bffba8b3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  missionPanel: {fileID: 159732382}
   missionObjectImage: {fileID: 1403847523}
   missionObjectText: {fileID: 885140981}
+  funnyPanel: {fileID: 1761464959}
   funnyObjectImage: {fileID: 1656518948}
   funnyObjectText: {fileID: 1927592572}
-  playerInventory: {fileID: 0}
+  playerInventory: {fileID: 2078706861}
 --- !u!1 &1558063326
 GameObject:
   m_ObjectHideFlags: 0
@@ -1437,7 +1438,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1761464960
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1746,10 +1747,9 @@ MonoBehaviour:
   onInteraction:
     m_PersistentCalls:
       m_Calls: []
-  objectName: 
-  objectSprite: {fileID: 0}
+  objectName: box2
+  objectSprite: {fileID: 1407667117, guid: c4245e8d0690e7f49b670a63ccd85498, type: 3}
   objectType: 0
-  canInteractCD: 0
 --- !u!65 &2043849992
 BoxCollider:
   m_ObjectHideFlags: 0

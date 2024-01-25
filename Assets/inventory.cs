@@ -5,10 +5,33 @@ using UnityEngine;
 public class inventory : MonoBehaviour
 {
     [SerializeField] private GameObject missionObjectEquiped;
-    bool missionEquiped=false;
+    private bool _missionEquiped=false;
+
+    public bool MissionEquiped
+    {
+        get => _missionEquiped;
+
+        set
+        {
+            _missionEquiped = value;
+            OnMissionObjectBool.Invoke(_missionEquiped);
+        }
+    }
+    
 
     [SerializeField] private GameObject funnyObjectEquiped;
-    bool funnyEquiped = false;
+    private bool _funnyEquiped = false;
+
+    public bool FunnyEquiped
+    {
+        get => _funnyEquiped;
+
+        set
+        {
+            _funnyEquiped = value;
+            OnFunnyObjectBool.Invoke(_funnyEquiped);
+        }
+    }
 
     [SerializeField] float throwForce;
 
@@ -74,6 +97,8 @@ public class inventory : MonoBehaviour
         missionObjectEquiped.transform.parent = gameObject.transform;
         missionObjectEquiped.transform.localPosition = Vector3.zero;
         missionObjectEquiped.SetActive(false);
+
+        MissionEquiped = true;
     }
 
     private void SetFunnyObject(PickableObject newObject)
@@ -82,6 +107,8 @@ public class inventory : MonoBehaviour
         funnyObjectEquiped.transform.parent = gameObject.transform;
         funnyObjectEquiped.transform.localPosition = Vector3.zero;
         funnyObjectEquiped.SetActive(false);
+
+        FunnyEquiped = true;
     }
 
     IEnumerator StartInteractionCD()
@@ -89,5 +116,21 @@ public class inventory : MonoBehaviour
         yield return new WaitForSeconds(interactionCD);
 
         canInteract = true;
+    }
+
+    public delegate void OnMissionObjectBoolChanged(bool newValue);
+    public event OnMissionObjectBoolChanged OnMissionObjectBool;
+
+    public delegate void OnFunnyObjectBoolChanged(bool newValue);
+    public event OnFunnyObjectBoolChanged OnFunnyObjectBool;
+
+    public GameObject GetMissionObject()
+    {
+        return missionObjectEquiped;
+    }
+
+    public GameObject GetFunnyObject()
+    {
+        return funnyObjectEquiped;
     }
 }
