@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c4245e8d0690e7f49b670a63ccd85498
+guid: 362cf1b0b36c17740b5a921537a1097b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,112 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: JesterRun_0
+      name: PrickIdle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bd895bad9b2db14e9eb54a7ab5beacc
+      internalID: -663288192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrickIdle_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 717bcdd8eb9d85a4ca7e0a966d77d158
+      internalID: -1709437617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrickIdle_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a98f20f7859f1da4ea0085d7e630f925
+      internalID: 1251261650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrickIdle_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a637b444fb11d4f42b9b46963d224437
+      internalID: 306199772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrickIdle_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98bc8b1efa14a5744b30c77212b7fb7f
+      internalID: -617250993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrickIdle_5
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d726a45b1e35c744966f3e9fb94bf5e
-      internalID: 1407667117
+      spriteID: 0f8a5f0ada8b15743a943e8287ad2311
+      internalID: -1021021590
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JesterRun_1
+      name: PrickIdle_6
       rect:
         serializedVersion: 2
         x: 64
@@ -132,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3612434af0739447b84c6cf4a73e060
-      internalID: -1387732741
+      spriteID: 71146d528da6e0e49ad18a64cb97e9fc
+      internalID: -689195174
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JesterRun_2
+      name: PrickIdle_7
       rect:
         serializedVersion: 2
         x: 128
@@ -153,14 +258,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc6772664374c84478f137e58355ef3f
-      internalID: 1415351648
+      spriteID: d5aef5f984cddf64d9243a4a28a86973
+      internalID: -200992350
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JesterRun_3
+      name: PrickIdle_8
       rect:
         serializedVersion: 2
         x: 192
@@ -174,14 +279,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f25e737805e7c7f4aa66b3843fb43d79
-      internalID: -1809741974
+      spriteID: 9a0ed646f47b4ab4996c5595b6119d77
+      internalID: -750274972
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JesterRun_4
+      name: PrickIdle_9
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bea83ad0de65d6346b82373b8396c272
+      internalID: -2128490492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrickIdle_10
       rect:
         serializedVersion: 2
         x: 0
@@ -195,14 +321,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df5c3d071573724438017d020a77bf5c
-      internalID: -1337503281
+      spriteID: d092cac759c85ab44bfa8542cb415c98
+      internalID: 1652429156
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JesterRun_5
+      name: PrickIdle_11
       rect:
         serializedVersion: 2
         x: 64
@@ -216,14 +342,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 417edb0388d6b1241a60f47e1c129366
-      internalID: -139460904
+      spriteID: 5b14650d24528554294be33e8c10de7b
+      internalID: 638617289
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JesterRun_6
+      name: PrickIdle_12
       rect:
         serializedVersion: 2
         x: 128
@@ -237,8 +363,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2127dc157fbf6284dbd1db1ef0df256b
-      internalID: -1972817541
+      spriteID: 2d1775067e280e34dafdccbae075b1c3
+      internalID: 608690426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrickIdle_13
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39b464786abc0cd418bcb718285ac03c
+      internalID: 1661052398
       vertices: []
       indices: 
       edges: []
@@ -246,7 +393,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 447cba1b1f969794682b38d0cc29e452
+    spriteID: e13daadfdfc8606459918911a8b8e2f4
     internalID: 0
     vertices: []
     indices: 
@@ -254,13 +401,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      JesterRun_0: 1407667117
-      JesterRun_1: -1387732741
-      JesterRun_2: 1415351648
-      JesterRun_3: -1809741974
-      JesterRun_4: -1337503281
-      JesterRun_5: -139460904
-      JesterRun_6: -1972817541
+      PrickIdle_0: -663288192
+      PrickIdle_1: -1709437617
+      PrickIdle_10: 1652429156
+      PrickIdle_11: 638617289
+      PrickIdle_12: 608690426
+      PrickIdle_13: 1661052398
+      PrickIdle_2: 1251261650
+      PrickIdle_3: 306199772
+      PrickIdle_4: -617250993
+      PrickIdle_5: -1021021590
+      PrickIdle_6: -689195174
+      PrickIdle_7: -200992350
+      PrickIdle_8: -750274972
+      PrickIdle_9: -2128490492
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
