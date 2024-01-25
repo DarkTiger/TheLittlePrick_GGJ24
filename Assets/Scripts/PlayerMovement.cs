@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpForce = 1f;
     [SerializeField] float movementDrag = 10f;
 
+    [SerializeField] private Interacter InteractionPoint;
+
     public InputAction MovementAction { get; private set; }
     public InputAction RotationAction { get; private set; }
     public InputAction JumpAction { get; private set; }
@@ -54,5 +56,12 @@ public class PlayerMovement : MonoBehaviour
         }
 
         isGrounded = Physics.Raycast(new Ray(transform.position -(transform.up * 0.95f), -transform.up), 0.25f);
+
+
     }
+
+    //private void Interaction()
+    //{
+    //    InteractionPoint.Interaction(this);
+    //}
 }
