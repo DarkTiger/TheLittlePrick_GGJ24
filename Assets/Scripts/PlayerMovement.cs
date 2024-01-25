@@ -54,9 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        //float velocityY = rb.velocity.y;
         rb.velocity = new Vector3(rb.velocity.x * 0.5f * Time.deltaTime, rb.velocity.y, rb.velocity.z * 0.5f * Time.deltaTime);
-        //rb.velocity = velocityY;
 
         Vector2 movementValue = MovementAction.ReadValue<Vector2>();
 
