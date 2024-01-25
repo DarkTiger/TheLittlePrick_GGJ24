@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float movementSpeed = 1f;
     [SerializeField] float rotationSpeed = 1f;
     [SerializeField] float jumpForce = 1f;
-    [SerializeField] float movementDrag = 10f;
     [SerializeField] float mouseSpeed = 0.1f;
 
     public InputAction MovementAction { get; private set; }
@@ -55,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        rb.velocity -= new Vector3(rb.velocity.x, 0f, rb.velocity.z) * Time.deltaTime * movementDrag;
+        rb.velocity *= 0.5f * Time.deltaTime;
 
         Vector2 movementValue = MovementAction.ReadValue<Vector2>();
 
