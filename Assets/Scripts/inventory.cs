@@ -39,7 +39,12 @@ public class inventory : MonoBehaviour
 
     [SerializeField] float interactionCD = 0.5f;
 
-    
+    PlayerMovement player;
+
+    private void Start()
+    {
+        player=GetComponent<PlayerMovement>();
+    }
 
     public void ChangeObject(GameObject obj)
     {
@@ -47,6 +52,9 @@ public class inventory : MonoBehaviour
         {
             return;
         }
+
+        player.GetComponent<Animator>().SetTrigger("Pick-up");
+        
 
         PickableObject newObject= obj.GetComponent<PickableObject>();
 
@@ -60,6 +68,8 @@ public class inventory : MonoBehaviour
                     missionObjectEquiped.transform.localPosition = Vector3.up;
                     missionObjectEquiped.transform.parent = null;
                     missionObjectEquiped.GetComponent<Rigidbody>().AddForce(GenerateRandomDirection() * throwForce, ForceMode.Impulse);
+
+                    Debug.Log(GenerateRandomDirection() * throwForce);
 
                     SetMissionObject(newObject);
                 }
@@ -76,9 +86,11 @@ public class inventory : MonoBehaviour
                 if (funnyObjectEquiped != null)
                 {
                     funnyObjectEquiped.SetActive(true);
-                    missionObjectEquiped.transform.localPosition = Vector3.up;
+                    funnyObjectEquiped.transform.localPosition = Vector3.up;
                     funnyObjectEquiped.transform.parent = null;
                     funnyObjectEquiped.GetComponent<Rigidbody>().AddForce(GenerateRandomDirection() * throwForce,ForceMode.Impulse);
+
+                    Debug.Log(GenerateRandomDirection() * throwForce);
 
                     SetFunnyObject(newObject);
                 }
