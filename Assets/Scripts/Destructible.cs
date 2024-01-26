@@ -42,9 +42,9 @@ public class Destructible : MonoBehaviour
     IEnumerator DamageEffect() 
     {
         spriteRenderer.color = Color.red;
-        transform.localScale = Vector3.one * 1.1f;
+        transform.localScale = Vector3.one * 1.2f;
 
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.075f);
 
         spriteRenderer.color = Color.white;
         transform.localScale = Vector3.one;
