@@ -210,11 +210,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8351355005761381980, guid: 0c00e95ac688f5e4b9dbf1b914798b9e,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2078706861}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c00e95ac688f5e4b9dbf1b914798b9e, type: 3}
 --- !u!1 &1190395785
 GameObject:
@@ -969,28 +965,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &2078706853 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8351355005761381980, guid: 0c00e95ac688f5e4b9dbf1b914798b9e,
+--- !u!114 &2078706862 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7773411527769817496, guid: 0c00e95ac688f5e4b9dbf1b914798b9e,
     type: 3}
   m_PrefabInstance: {fileID: 497498737}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2078706861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2078706853}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c4c24ccf4031eb4ea8a4d38004ebb79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missionObjectEquiped: {fileID: 0}
-  funnyObjectEquiped: {fileID: 0}
-  throwForce: 10
-  interactionCD: 0.5
 --- !u!1001 &1893803404827532295
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1121,6 +1107,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508481985740870019, guid: e0ebe168918b53b41b049f2bd66b6898,
+        type: 3}
+      propertyPath: maxTime
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 5508481985740870019, guid: e0ebe168918b53b41b049f2bd66b6898,
         type: 3}
@@ -1811,7 +1802,7 @@ PrefabInstance:
         type: 3}
       propertyPath: playerInventory
       value: 
-      objectReference: {fileID: 2078706861}
+      objectReference: {fileID: 2078706862}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

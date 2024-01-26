@@ -44,6 +44,15 @@ public class Gamemanager : MonoBehaviour
         float minutes=time/60;
         float seconds=time%60;
 
-        return ($"{(int)minutes}:{(int)seconds}");
+        if (seconds < 10)
+        {
+            return ($"{(int)minutes}:0{(int)seconds}");
+        }
+        else
+        {
+            return ($"{(int)minutes}:{(int)seconds}");
+        }
+
+        
     }
 }
