@@ -28,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
     Action OnGrounded;
     float lastSpeedDir = 0f;
 
+    [Header("HitsSound")]
+    [SerializeField] AudioClip fistHitSoud;
+
 
     private void Awake()
     {
