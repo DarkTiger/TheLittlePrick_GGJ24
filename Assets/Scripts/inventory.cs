@@ -57,8 +57,9 @@ public class inventory : MonoBehaviour
                 if(missionObjectEquiped!=null)
                 {
                     missionObjectEquiped.SetActive(true);
+                    missionObjectEquiped.transform.localPosition = Vector3.up;
                     missionObjectEquiped.transform.parent = null;
-                    missionObjectEquiped.GetComponent<Rigidbody>().AddExplosionForce(throwForce, new Vector3(transform.localScale.x, 0), 0.3f);
+                    missionObjectEquiped.GetComponent<Rigidbody>().AddForce(GenerateRandomDirection() * throwForce, ForceMode.Impulse);
 
                     SetMissionObject(newObject);
                 }
@@ -75,8 +76,9 @@ public class inventory : MonoBehaviour
                 if (funnyObjectEquiped != null)
                 {
                     funnyObjectEquiped.SetActive(true);
+                    missionObjectEquiped.transform.localPosition = Vector3.up;
                     funnyObjectEquiped.transform.parent = null;
-                    funnyObjectEquiped.GetComponent<Rigidbody>().AddForce(Vector3.right * throwForce);
+                    funnyObjectEquiped.GetComponent<Rigidbody>().AddForce(GenerateRandomDirection() * throwForce,ForceMode.Impulse);
 
                     SetFunnyObject(newObject);
                 }
@@ -132,5 +134,10 @@ public class inventory : MonoBehaviour
     public GameObject GetFunnyObject()
     {
         return funnyObjectEquiped;
+    }
+
+    public Vector3 GenerateRandomDirection()
+    {
+        return new Vector3(Random.Range(-1f,1f), Random.Range(0f,1f),Random.Range(-1f,1f));
     }
 }
