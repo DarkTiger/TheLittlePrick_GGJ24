@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 3.5
-  rotationSpeed: 0.85
+  rotationSpeed: 1.25
   jumpForce: 7.5
   mouseSpeed: 0.25
 --- !u!212 &1517843998732235658

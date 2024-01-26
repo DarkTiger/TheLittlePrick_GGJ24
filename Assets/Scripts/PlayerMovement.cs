@@ -57,13 +57,13 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector3(rb.velocity.x * 0.5f * Time.deltaTime, rb.velocity.y, rb.velocity.z * 0.5f * Time.deltaTime);
 
         Vector2 movementValue = MovementAction.ReadValue<Vector2>();
+        lastSpeedDir = movementValue.x;
 
         if (movementValue.magnitude > 0.2f || movementValue.magnitude < -0.2f)
         {
             float velocityY = rb.velocity.y;
             rb.velocity = ((transform.forward * movementValue.y) + (transform.right * movementValue.x)) * movementSpeed;
             rb.velocity = new Vector3(rb.velocity.x, velocityY, rb.velocity.z);
-            lastSpeedDir = rb.velocity.x;
         }
 
         float rotationValue = RotationAction.ReadValue<Vector2>().x + (RotationMouseAction.ReadValue<Vector2>().x * mouseSpeed);
