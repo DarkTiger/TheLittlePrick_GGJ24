@@ -39,7 +39,14 @@ public class inventory : MonoBehaviour
 
     [SerializeField] float interactionCD = 0.5f;
 
-    
+    PlayerMovement player;
+
+    private void Start()
+    {
+        player = GetComponent<PlayerMovement>();
+    }
+
+
 
     public void ChangeObject(GameObject obj)
     {
@@ -48,17 +55,24 @@ public class inventory : MonoBehaviour
             return;
         }
 
+        
+
         PickableObject newObject= obj.GetComponent<PickableObject>();
 
         if ( newObject != null )
         {
             if(newObject.GetObjectType()== pickableObjectType.Mission)
             {
-                if(missionObjectEquiped!=null)
+                if (missionObjectEquiped != null)
                 {
                     missionObjectEquiped.SetActive(true);
+                    missionObjectEquiped.transform.localPosition = Vector3.up;
                     missionObjectEquiped.transform.parent = null;
-                    missionObjectEquiped.GetComponent<Rigidbody>().AddExplosionForce(throwForce, new Vector3(transform.localScale.x, 0), 0.3f);
+
+                    Vector3 forceDirection = GenerateForceDirection();
+                    missionObjectEquiped.GetComponent<Rigidbody>().AddForce(forceDirection * throwForce, ForceMode.Impulse);
+
+                    Debug.Log(forceDirection * throwForce);
 
                     SetMissionObject(newObject);
                 }
@@ -67,16 +81,18 @@ public class inventory : MonoBehaviour
                     SetMissionObject(newObject);
                 }
 
-                canInteract = false;
-                StartCoroutine(StartInteractionCD());
+                InteractionEffects();
             }
             else if(newObject.GetObjectType() == pickableObjectType.Funny)
             {
                 if (funnyObjectEquiped != null)
                 {
                     funnyObjectEquiped.SetActive(true);
+                    funnyObjectEquiped.transform.position = Vector3.up;
                     funnyObjectEquiped.transform.parent = null;
-                    funnyObjectEquiped.GetComponent<Rigidbody>().AddForce(Vector3.right * throwForce);
+
+                    Vector3 forceDirection = GenerateForceDirection();
+                    funnyObjectEquiped.GetComponent<Rigidbody>().AddForce(forceDirection * throwForce, ForceMode.Impulse);
 
                     SetFunnyObject(newObject);
                 }
@@ -86,9 +102,20 @@ public class inventory : MonoBehaviour
                 }
             }
 
-            canInteract= false;
-            StartCoroutine(StartInteractionCD());
+            InteractionEffects();
         }
+    }
+
+    private void InteractionEffects()
+    {
+        player.gameObject.GetComponent<Animator>().SetTrigger("Pick-up");
+        canInteract = false;
+        StartCoroutine(StartInteractionCD());
+    }
+
+    private static Vector3 GenerateForceDirection()
+    {
+        return new Vector3(Random.Range(-1f, 1f), Random.Range(0f, 1f), Random.Range(-1f, 1f));
     }
 
     private void SetMissionObject(PickableObject newObject)
