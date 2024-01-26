@@ -41,9 +41,9 @@ public class UiInventory : MonoBehaviour
 
     public void SetFunnyUI(PickableObject obj)
     {
-        
+        Debug.Log("Ho inseriro funny");
         funnyObjectImage.sprite = obj.objectSprite;
-        funnyObjectText.name = obj.objectName;
+        funnyObjectText.text = obj.objectName;
     }
 
     private void OnBoolChangeMission(bool value)
@@ -63,7 +63,7 @@ public class UiInventory : MonoBehaviour
 
         if (value)
         {
-            SetMissionUI(playerInventory.GetFunnyObject().GetComponent<PickableObject>());
+            SetFunnyUI(playerInventory.GetFunnyObject().GetComponent<PickableObject>());
         }
     }
 
