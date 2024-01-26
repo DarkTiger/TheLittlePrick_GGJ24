@@ -45,7 +45,7 @@ public class Interacter : MonoBehaviour
         {
             interactableObject.Interact(owner);
 
-            owner.GetComponent<Animator>().SetTrigger("Pick-up");
+            
         }
     }
 }

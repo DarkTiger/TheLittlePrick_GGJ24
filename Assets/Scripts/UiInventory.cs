@@ -16,12 +16,21 @@ public class UiInventory : MonoBehaviour
     [SerializeField] Image funnyObjectImage;
     [SerializeField] TextMeshProUGUI funnyObjectText;
 
+    [Header("Timer")]
+    [SerializeField] TextMeshProUGUI timerText;
+    
+
     [SerializeField] inventory playerInventory;
 
     private void Start()
     {
         playerInventory.OnMissionObjectBool += OnBoolChangeMission;
         playerInventory.OnFunnyObjectBool += OnBoolChangeFunny;
+    }
+
+    private void Update()
+    {
+        
     }
 
     public void SetMissionUI(PickableObject obj)
@@ -57,7 +66,14 @@ public class UiInventory : MonoBehaviour
             SetMissionUI(playerInventory.GetFunnyObject().GetComponent<PickableObject>());
         }
     }
+
+    public void SetUiTimer(string time)
+    {
+        timerText.text = time;
+    }
+
    
-    
+
+
 
 }
