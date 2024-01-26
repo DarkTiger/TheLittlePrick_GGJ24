@@ -24,7 +24,7 @@ public class UIBoxTest : MonoBehaviour
             gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(pluswidth,0);
             yield return new WaitForSeconds(1 / textSpeed);
 
-        }
+        }  
 
     }
 
