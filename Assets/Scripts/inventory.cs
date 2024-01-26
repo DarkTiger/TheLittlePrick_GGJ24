@@ -107,22 +107,38 @@ public class inventory : MonoBehaviour
 
     private void SetMissionObject(PickableObject newObject)
     {
-        missionObjectEquiped = newObject.gameObject;
-        missionObjectEquiped.transform.parent = gameObject.transform;
-        missionObjectEquiped.transform.localPosition = Vector3.zero;
-        missionObjectEquiped.SetActive(false);
+        if(newObject!=null)
+        {
+            missionObjectEquiped = newObject.gameObject;
+            missionObjectEquiped.transform.parent = gameObject.transform;
+            missionObjectEquiped.transform.localPosition = Vector3.zero;
+            missionObjectEquiped.SetActive(false);
 
-        MissionEquiped = true;
+            MissionEquiped = true;
+        }
+        else
+        {
+            MissionEquiped = false;
+        }
+        
     }
 
     private void SetFunnyObject(PickableObject newObject)
     {
-        funnyObjectEquiped = newObject.gameObject;
-        funnyObjectEquiped.transform.parent = gameObject.transform;
-        funnyObjectEquiped.transform.localPosition = Vector3.zero;
-        funnyObjectEquiped.SetActive(false);
+        if (newObject!=null)
+        {
+            funnyObjectEquiped = newObject.gameObject;
+            funnyObjectEquiped.transform.parent = gameObject.transform;
+            funnyObjectEquiped.transform.localPosition = Vector3.zero;
+            funnyObjectEquiped.SetActive(false);
 
-        FunnyEquiped = true;
+            FunnyEquiped = true;
+        }
+        else
+        {
+            FunnyEquiped = false;
+        }
+        
     }
 
     IEnumerator StartInteractionCD()
