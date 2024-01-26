@@ -4,12 +4,26 @@ using UnityEngine;
 
 public class Gamemanager : MonoBehaviour
 {
+    public static Gamemanager instance;
+
+    
     [SerializeField] UiInventory uiInventory;
 
     [SerializeField] float maxTime;
     float uiTimerRemaining;
 
-    
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogError("trovato gia un Gamemanager nella scena");
+        }
+        else
+        {
+            instance = this;
+
+        }
+    }
 
     private void Start()
     {
