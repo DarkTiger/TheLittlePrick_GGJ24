@@ -213,6 +213,15 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a5ca9f2135231124c8a66a01239575cd, type: 3}
   - {fileID: 8300000, guid: 4ce8423f590a2a34bafb5f1f73d2d1cc, type: 3}
   - {fileID: 8300000, guid: a2c312e058e80ed4f8c6595711002c7a, type: 3}
+  - {fileID: 8300000, guid: dac01c0730c2c3742b34aef138448e8f, type: 3}
+  - {fileID: 8300000, guid: ed4fe162846e37240b9b995bef237038, type: 3}
+  - {fileID: 8300000, guid: 6af41fc26f847274d87d252732b0e9af, type: 3}
+  - {fileID: 8300000, guid: 93ea13db4ef49c2488579a8dae768d3c, type: 3}
+  jumpClips:
+  - {fileID: 8300000, guid: 7cef82a8609f7574a92a9b41bf9081d2, type: 3}
+  - {fileID: 8300000, guid: f7ee8fad0638d47418761c4712cfb7f6, type: 3}
+  - {fileID: 8300000, guid: b0815fbaa09a4394bb2d021b0d1ca946, type: 3}
+  - {fileID: 8300000, guid: a2611c3b2ef167a4aadfa32b9251e0c4, type: 3}
 --- !u!212 &1517843998732235658
 SpriteRenderer:
   m_ObjectHideFlags: 0
