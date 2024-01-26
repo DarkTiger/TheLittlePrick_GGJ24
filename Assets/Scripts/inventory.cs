@@ -60,45 +60,49 @@ public class inventory : MonoBehaviour
 
         if ( newObject != null )
         {
-            if(newObject.GetObjectType()== pickableObjectType.Mission)
+            switch (newObject.GetObjectType())
             {
-                if(missionObjectEquiped!=null)
-                {
-                    missionObjectEquiped.SetActive(true);
-                    missionObjectEquiped.transform.localPosition = Vector3.up;
-                    missionObjectEquiped.transform.parent = null;
-                    missionObjectEquiped.GetComponent<Rigidbody>().AddForce(GenerateRandomDirection() * throwForce, ForceMode.Impulse);
+                case pickableObjectType.Mission:
 
-                    Debug.Log(GenerateRandomDirection() * throwForce);
+                    if (missionObjectEquiped != null)
+                    {
+                        missionObjectEquiped.SetActive(true);
+                        missionObjectEquiped.transform.localPosition = Vector3.up;
+                        missionObjectEquiped.transform.parent = null;
+                        missionObjectEquiped.GetComponent<Rigidbody>().AddForce(GenerateRandomDirection() * throwForce, ForceMode.Impulse);
 
-                    SetMissionObject(newObject);
-                }
-                else
-                {
-                    SetMissionObject(newObject);
-                }
+                        Debug.Log(GenerateRandomDirection() * throwForce);
 
-                canInteract = false;
-                StartCoroutine(StartInteractionCD());
+                        SetMissionObject(newObject);
+                    }
+                    else
+                    {
+                        SetMissionObject(newObject);
+                    }
+
+                    canInteract = false;
+                    StartCoroutine(StartInteractionCD());
+                    break;
+                case pickableObjectType.Funny:
+
+                    if (funnyObjectEquiped != null)
+                    {
+                        funnyObjectEquiped.SetActive(true);
+                        funnyObjectEquiped.transform.localPosition = Vector3.up;
+                        funnyObjectEquiped.transform.parent = null;
+                        funnyObjectEquiped.GetComponent<Rigidbody>().AddForce(GenerateRandomDirection() * throwForce, ForceMode.Impulse);
+
+                        Debug.Log(GenerateRandomDirection() * throwForce);
+
+                        SetFunnyObject(newObject);
+                    }
+                    else
+                    {
+                        SetFunnyObject(newObject);
+                    }
+                    break;
             }
-            else if(newObject.GetObjectType() == pickableObjectType.Funny)
-            {
-                if (funnyObjectEquiped != null)
-                {
-                    funnyObjectEquiped.SetActive(true);
-                    funnyObjectEquiped.transform.localPosition = Vector3.up;
-                    funnyObjectEquiped.transform.parent = null;
-                    funnyObjectEquiped.GetComponent<Rigidbody>().AddForce(GenerateRandomDirection() * throwForce,ForceMode.Impulse);
-
-                    Debug.Log(GenerateRandomDirection() * throwForce);
-
-                    SetFunnyObject(newObject);
-                }
-                else
-                {
-                    SetFunnyObject(newObject);
-                }
-            }
+            
 
             canInteract= false;
             StartCoroutine(StartInteractionCD());
