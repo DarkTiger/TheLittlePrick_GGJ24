@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 25714f07b3150ec4fb437ac72e9d2017
+guid: d4224881a99654b4b8edb7e673ed487b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -39,7 +39,7 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: JesterCrowbar_0
+      name: Vase_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fcfa6f248143a442bf2f69c4f344c5b
-      internalID: 101768757
+      spriteID: 1da6ebfbfaca3124b9c658a94892a378
+      internalID: 546814809
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JesterCrowbar_1
+      name: Vase_1
       rect:
         serializedVersion: 2
         x: 64
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65f692c3a1887794e99555d8f3bbc290
-      internalID: 1282589149
+      spriteID: 4d4538ac287430a41a5b907e9ff42e0a
+      internalID: -1425854182
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JesterCrowbar_2
+      name: Vase_2
       rect:
         serializedVersion: 2
         x: 128
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4a992170678bb340a2e3dc7d2b606d4
-      internalID: -626811908
+      spriteID: 10a3676bd8b909847bf87cecf0f86d80
+      internalID: 245512644
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JesterCrowbar_3
+      name: Vase_3
       rect:
         serializedVersion: 2
         x: 0
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a969e985cdad8de4a90ba019fd27cdf9
-      internalID: -476259869
+      spriteID: c3a4d2c2ee39e3548af37adeb6b4eeb7
+      internalID: -1546842687
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JesterCrowbar_4
+      name: Vase_4
       rect:
         serializedVersion: 2
         x: 64
@@ -195,8 +195,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: adc530ffdb416554c9aa04cefffeca47
-      internalID: 204555660
+      spriteID: a6c7d01ce68bf4344a0b98f02ec1f7dc
+      internalID: 1798095930
       vertices: []
       indices: 
       edges: []
@@ -204,7 +204,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 821c2d2c75467e74593cd906f5b72eb3
+    spriteID: cf4c6b4a3f7b12b4fb8b464dd348629b
     internalID: 0
     vertices: []
     indices: 
@@ -212,11 +212,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      JesterCrowbar_0: 101768757
-      JesterCrowbar_1: 1282589149
-      JesterCrowbar_2: -626811908
-      JesterCrowbar_3: -476259869
-      JesterCrowbar_4: 204555660
+      Vase_0: 546814809
+      Vase_1: -1425854182
+      Vase_2: 245512644
+      Vase_3: -1546842687
+      Vase_4: 1798095930
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
