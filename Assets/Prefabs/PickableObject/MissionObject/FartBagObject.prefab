@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 674847325915335546}
   - component: {fileID: 4323948590627475037}
   - component: {fileID: 2201923916177068818}
+  - component: {fileID: 2367125315279717069}
   m_Layer: 0
   m_Name: FartBagObject
   m_TagString: Untagged
@@ -140,6 +141,7 @@ MonoBehaviour:
   objectName: Fart Bag
   objectSprite: {fileID: 2088685022, guid: 3fd2c69c1b162604dad4e5bcf66e812e, type: 3}
   objectType: 0
+  funnyLevel: 0
 --- !u!54 &674847325915335546
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -209,3 +211,15 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2367125315279717069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3116098984113650136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 782648e285fdd9e43a1083281ed9c3c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

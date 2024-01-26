@@ -8,9 +8,13 @@ public class Gamemanager : MonoBehaviour
 
     
     [SerializeField] UiInventory uiInventory;
-
+    [SerializeField] List<PickableObject> missionItems;
     [SerializeField] float maxTime;
+    [SerializeField] int maxMissionPickableDrops;
+    public float MissionPickableDropsChance = 0.1f;
+
     float uiTimerRemaining;
+
 
     private void Awake()
     {
@@ -54,5 +58,16 @@ public class Gamemanager : MonoBehaviour
         }
 
         
+    }
+
+    public PickableObject GetRandomPickable()
+    {
+        if (maxMissionPickableDrops <= 0) return null;
+
+        PickableObject pickable = missionItems[Random.Range(0, missionItems.Count - 1)];
+        missionItems.Remove(pickable);
+        maxMissionPickableDrops--;
+
+        return pickable;
     }
 }

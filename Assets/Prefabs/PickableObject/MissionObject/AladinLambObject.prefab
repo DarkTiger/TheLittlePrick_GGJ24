@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 4679155009333983048}
   - component: {fileID: 2099792564460286262}
   - component: {fileID: 8065441025204479075}
+  - component: {fileID: 3059319814682126137}
   m_Layer: 0
   m_Name: AladinLambObject
   m_TagString: Untagged
@@ -140,6 +141,7 @@ MonoBehaviour:
   objectName: Aladin's Lamp
   objectSprite: {fileID: -1038089392, guid: 3fd2c69c1b162604dad4e5bcf66e812e, type: 3}
   objectType: 0
+  funnyLevel: 0
 --- !u!54 &4679155009333983048
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -209,3 +211,15 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3059319814682126137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8696196455632258282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 782648e285fdd9e43a1083281ed9c3c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
