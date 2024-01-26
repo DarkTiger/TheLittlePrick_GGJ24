@@ -5,7 +5,10 @@ using UnityEngine;
 public class DialogueNPC : MonoBehaviour
 {
 
+
     [SerializeField] Sprite characterSprite;
+
+
 
 
 }
