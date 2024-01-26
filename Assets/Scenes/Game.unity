@@ -13491,6 +13491,28 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4078345433109402506, guid: 981ba6dfedd5496459c212fe1a5f5361,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 53.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078345433109402506, guid: 981ba6dfedd5496459c212fe1a5f5361,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4a61e42aff1f2cd45945940bce57782e,
+        type: 2}
+    - target: {fileID: 4078345433109402506, guid: 981ba6dfedd5496459c212fe1a5f5361,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1650306790391049360, guid: 4a61e42aff1f2cd45945940bce57782e,
+        type: 2}
+    - target: {fileID: 4078345433109402506, guid: 981ba6dfedd5496459c212fe1a5f5361,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4362447051236062100, guid: 981ba6dfedd5496459c212fe1a5f5361,
         type: 3}
       propertyPath: m_Pivot.x
