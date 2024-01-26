@@ -44,6 +44,8 @@ public class Interacter : MonoBehaviour
         if( interactableObject != null)
         {
             interactableObject.Interact(owner);
+
+            
         }
     }
 }
