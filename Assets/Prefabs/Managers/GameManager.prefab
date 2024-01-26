@@ -45,4 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiInventory: {fileID: 0}
+  missionItems:
+  - {fileID: 6957285283910809973, guid: 27e4e5e187f80c84d994c6b4ff9297ff, type: 3}
+  - {fileID: 8665887926803393204, guid: bc470ef2e0a4cd848af086b587bfd4e1, type: 3}
+  - {fileID: 4802968900510232881, guid: 616dcb23509d65446bc5f85f07358d87, type: 3}
+  - {fileID: 5118949499954558945, guid: edf23def59751e1418ddef41a0055a9d, type: 3}
   maxTime: 600
+  maxMissionPickableDrops: 4
+  MissionPickableDropsChance: 0.5

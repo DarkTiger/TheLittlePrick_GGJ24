@@ -99,7 +99,15 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         animator.SetBool("Running", Mathf.Abs(rb.velocity.x + rb.velocity.z) > 0.1f);
-        spriteRenderer.flipX = lastSpeedDir < 0f;
+
+        if (lastSpeedDir <= -0.25f)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else if (lastSpeedDir >= 0.25f)
+        {
+            spriteRenderer.flipX = false;
+        }
     }
 
     private IEnumerator Attack(float damageDelay)

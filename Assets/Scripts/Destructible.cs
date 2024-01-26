@@ -52,11 +52,15 @@ public class Destructible : MonoBehaviour
 
     void DestroyThis()
     {
+        if (Random.Range(0f, 100f) <= Gamemanager.instance.MissionPickableDropsChance)
+        {
+            Instantiate(Gamemanager.instance.GetRandomPickable().gameObject, transform.position + (Vector3.up * 0.5f), Quaternion.identity);
+        }
+
         StopAllCoroutines();
         visualEffect.transform.parent = null;
         visualEffect.Play();
         Destroy(visualEffect, 3);
         Destroy(gameObject);
-        //generate item
     }
 }
