@@ -114,7 +114,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a36b1b6ab351d14daefe6bd19614a5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitToDestroy: 6
+  hitToDestroy: 10
+  hitClips:
+  - {fileID: 8300000, guid: 01975cb9ac430ed4895667f342fc9546, type: 3}
+  - {fileID: 8300000, guid: ffc1bed079ab9044f8a67dbc56807d95, type: 3}
+  destroyClips:
+  - {fileID: 8300000, guid: 1ed23a657ad87364facd6d4e4ab63dc0, type: 3}
+  - {fileID: 8300000, guid: 6f1ee8c9f26a3f6429eafd444f686aa5, type: 3}
+  - {fileID: 8300000, guid: 6991dbffc9e8be54eab8375f885c4828, type: 3}
+  - {fileID: 8300000, guid: 156c7f898ad08904097271a56a26f224, type: 3}
 --- !u!135 &2549521972876541560
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -203,7 +211,7 @@ VisualEffect:
       m_Array: []
     m_Int:
       m_Array:
-      - m_Value: 5
+      - m_Value: 4
         m_Name: PiecesCount
         m_Overridden: 1
     m_Matrix4x4f:

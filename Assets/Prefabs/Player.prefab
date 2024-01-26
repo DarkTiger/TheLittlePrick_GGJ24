@@ -201,12 +201,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a1f544d00146643b33649e55622ed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 3.5
+  movementSpeed: 2.5
   rotationSpeed: 1.25
   jumpForce: 7.5
   mouseSpeed: 0.25
   hitEffect: {fileID: 6872172790127905327, guid: 337913c8280e88e42b03327408777feb,
     type: 3}
+  attackWhooshClip: {fileID: 8300000, guid: d38b6f5c84f39aa49a54dd9066f7a177, type: 3}
+  stepsClips:
+  - {fileID: 8300000, guid: a3ac2fc98abcbdc47bace1000b716691, type: 3}
+  - {fileID: 8300000, guid: a5ca9f2135231124c8a66a01239575cd, type: 3}
+  - {fileID: 8300000, guid: 4ce8423f590a2a34bafb5f1f73d2d1cc, type: 3}
+  - {fileID: 8300000, guid: a2c312e058e80ed4f8c6595711002c7a, type: 3}
 --- !u!212 &1517843998732235658
 SpriteRenderer:
   m_ObjectHideFlags: 0

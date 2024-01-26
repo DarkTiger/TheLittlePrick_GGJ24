@@ -6,6 +6,8 @@ using UnityEngine.VFX;
 public class Destructible : MonoBehaviour
 {
     [SerializeField] int hitToDestroy = 3;
+    [SerializeField] AudioClip[] hitClips;
+    [SerializeField] AudioClip[] destroyClips;
     SpriteRenderer spriteRenderer;
     VisualEffect visualEffect;
 
@@ -35,6 +37,7 @@ public class Destructible : MonoBehaviour
         }
         else
         {
+            AudioManager.instance.PlayAudioClip(hitClips[Random.Range(0, hitClips.Length)], transform.position);
             StartCoroutine(DamageEffect());
         }
     }
@@ -56,6 +59,8 @@ public class Destructible : MonoBehaviour
         {
             Instantiate(Gamemanager.instance.GetRandomPickable().gameObject, transform.position + (Vector3.up * 0.5f), Quaternion.identity);
         }
+
+        AudioManager.instance.PlayAudioClip(destroyClips[Random.Range(0, destroyClips.Length)], transform.position);
 
         StopAllCoroutines();
         visualEffect.transform.parent = null;
