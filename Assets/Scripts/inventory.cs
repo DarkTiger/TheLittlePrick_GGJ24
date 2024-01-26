@@ -39,7 +39,12 @@ public class inventory : MonoBehaviour
 
     [SerializeField] float interactionCD = 0.5f;
 
-    
+    PlayerMovement player;
+
+    private void Start()
+    {
+        player=GetComponent<PlayerMovement>();
+    }
 
     public void ChangeObject(GameObject obj)
     {
@@ -47,6 +52,9 @@ public class inventory : MonoBehaviour
         {
             return;
         }
+
+        player.GetComponent<Animator>().SetTrigger("Pick-up");
+        
 
         PickableObject newObject= obj.GetComponent<PickableObject>();
 
@@ -60,6 +68,8 @@ public class inventory : MonoBehaviour
                     missionObjectEquiped.transform.localPosition = Vector3.up;
                     missionObjectEquiped.transform.parent = null;
                     missionObjectEquiped.GetComponent<Rigidbody>().AddForce(GenerateRandomDirection() * throwForce, ForceMode.Impulse);
+
+                    Debug.Log(GenerateRandomDirection() * throwForce);
 
                     SetMissionObject(newObject);
                 }
@@ -76,9 +86,11 @@ public class inventory : MonoBehaviour
                 if (funnyObjectEquiped != null)
                 {
                     funnyObjectEquiped.SetActive(true);
-                    missionObjectEquiped.transform.localPosition = Vector3.up;
+                    funnyObjectEquiped.transform.localPosition = Vector3.up;
                     funnyObjectEquiped.transform.parent = null;
                     funnyObjectEquiped.GetComponent<Rigidbody>().AddForce(GenerateRandomDirection() * throwForce,ForceMode.Impulse);
+
+                    Debug.Log(GenerateRandomDirection() * throwForce);
 
                     SetFunnyObject(newObject);
                 }
@@ -95,22 +107,38 @@ public class inventory : MonoBehaviour
 
     private void SetMissionObject(PickableObject newObject)
     {
-        missionObjectEquiped = newObject.gameObject;
-        missionObjectEquiped.transform.parent = gameObject.transform;
-        missionObjectEquiped.transform.localPosition = Vector3.zero;
-        missionObjectEquiped.SetActive(false);
+        if(newObject!=null)
+        {
+            missionObjectEquiped = newObject.gameObject;
+            missionObjectEquiped.transform.parent = gameObject.transform;
+            missionObjectEquiped.transform.localPosition = Vector3.zero;
+            missionObjectEquiped.SetActive(false);
 
-        MissionEquiped = true;
+            MissionEquiped = true;
+        }
+        else
+        {
+            MissionEquiped = false;
+        }
+        
     }
 
     private void SetFunnyObject(PickableObject newObject)
     {
-        funnyObjectEquiped = newObject.gameObject;
-        funnyObjectEquiped.transform.parent = gameObject.transform;
-        funnyObjectEquiped.transform.localPosition = Vector3.zero;
-        funnyObjectEquiped.SetActive(false);
+        if (newObject!=null)
+        {
+            funnyObjectEquiped = newObject.gameObject;
+            funnyObjectEquiped.transform.parent = gameObject.transform;
+            funnyObjectEquiped.transform.localPosition = Vector3.zero;
+            funnyObjectEquiped.SetActive(false);
 
-        FunnyEquiped = true;
+            FunnyEquiped = true;
+        }
+        else
+        {
+            FunnyEquiped = false;
+        }
+        
     }
 
     IEnumerator StartInteractionCD()

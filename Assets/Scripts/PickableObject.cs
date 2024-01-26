@@ -15,6 +15,9 @@ public class PickableObject : Interactable
     public Sprite objectSprite;
     public pickableObjectType objectType;
 
+    [SerializeField] int funnyLevel=0;
+
+    
     public override void Interact(GameObject interacter)
     {
         base.Interact(interacter);
@@ -30,5 +33,10 @@ public class PickableObject : Interactable
     public pickableObjectType GetObjectType()
     {
         return objectType;
+    }
+
+    public int GetFunnyLevel()
+    {
+        return funnyLevel;
     }
 }
