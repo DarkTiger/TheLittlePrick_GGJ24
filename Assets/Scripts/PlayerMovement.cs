@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] GameObject hitEffect = null;
     [SerializeField] AudioClip attackWhooshClip;
     [SerializeField] AudioClip[] stepsClips;
+    [SerializeField] AudioClip[] jumpClips;
 
     public InputAction MovementAction { get; private set; }
     public InputAction RotationAction { get; private set; }
@@ -52,6 +53,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb.velocity += Vector3.up * jumpForce;
                 animator.SetTrigger("StartJump");
+
+                AudioManager.instance.PlayAudioClip(jumpClips[Random.Range(0, jumpClips.Length)], transform.position);
             }
         };
 
@@ -103,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetBool("Running", running);
 
-        if (running && lastStepTime > 0.25f)
+        if (running && lastStepTime > 0.25f && isGrounded)
         {
             AudioManager.instance.PlayAudioClip(stepsClips[Random.Range(0, stepsClips.Length)], transform.position);
             lastStepTime = 0;
