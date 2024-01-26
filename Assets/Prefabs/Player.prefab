@@ -135,6 +135,8 @@ MonoBehaviour:
   rotationSpeed: 1.25
   jumpForce: 7.5
   mouseSpeed: 0.25
+  hitEffect: {fileID: 6872172790127905327, guid: 337913c8280e88e42b03327408777feb,
+    type: 3}
 --- !u!212 &1517843998732235658
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -238,13 +240,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8369727920050173148}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.08715578, y: 0, z: 0, w: 0.9961947}
-  m_LocalPosition: {x: 0, y: 1.1, z: -1.5}
+  m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
+  m_LocalPosition: {x: 0, y: 1.3, z: -1.75}
   m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 829480386628087269}
-  m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
 --- !u!20 &5908760790627928234
 Camera:
   m_ObjectHideFlags: 0
