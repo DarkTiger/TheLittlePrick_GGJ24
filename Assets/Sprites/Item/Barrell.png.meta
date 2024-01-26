@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 25714f07b3150ec4fb437ac72e9d2017
+guid: 4e189dd07fe60f542963d0d724bc3a8d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -39,7 +39,7 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -97,106 +97,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: JesterCrowbar_0
+      name: Barrell_0
       rect:
         serializedVersion: 2
         x: 0
         y: 64
         width: 64
         height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fcfa6f248143a442bf2f69c4f344c5b
-      internalID: 101768757
+      spriteID: 921016ef3239f664fbc4a4e5e7cefab4
+      internalID: 59578739
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JesterCrowbar_1
+      name: Barrell_1
       rect:
         serializedVersion: 2
         x: 64
         y: 64
         width: 64
         height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65f692c3a1887794e99555d8f3bbc290
-      internalID: 1282589149
+      spriteID: c866dc5a55854e449b8609a11c30c1cf
+      internalID: 1283626717
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JesterCrowbar_2
+      name: Barrell_2
       rect:
         serializedVersion: 2
         x: 128
         y: 64
         width: 64
         height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4a992170678bb340a2e3dc7d2b606d4
-      internalID: -626811908
+      spriteID: 6f91177f729698646be2f5db37f84972
+      internalID: -678408220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JesterCrowbar_3
+      name: Barrell_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 64
         height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a969e985cdad8de4a90ba019fd27cdf9
-      internalID: -476259869
+      spriteID: 68ee9c3f4490d884baaa15348049415a
+      internalID: 788761117
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JesterCrowbar_4
+      name: Barrell_4
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 64
         height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: adc530ffdb416554c9aa04cefffeca47
-      internalID: 204555660
+      spriteID: 0553c36683603924388692fd69facf55
+      internalID: -631556327
       vertices: []
       indices: 
       edges: []
@@ -204,7 +204,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 821c2d2c75467e74593cd906f5b72eb3
+    spriteID: ce52886f0f6911e429781b1a700218c6
     internalID: 0
     vertices: []
     indices: 
@@ -212,11 +212,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      JesterCrowbar_0: 101768757
-      JesterCrowbar_1: 1282589149
-      JesterCrowbar_2: -626811908
-      JesterCrowbar_3: -476259869
-      JesterCrowbar_4: 204555660
+      Barrell_0: 59578739
+      Barrell_1: 1283626717
+      Barrell_2: -678408220
+      Barrell_3: 788761117
+      Barrell_4: -631556327
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

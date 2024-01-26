@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.Timeline.Actions;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public InputAction RotationMouseAction { get; private set; }
     public InputAction JumpAction { get; private set; }
     public InputAction InteractAction { get; private set; }
+    public InputAction AttackAction { get; private set; }
 
     Animator animator;
     SpriteRenderer spriteRenderer;
@@ -37,13 +39,20 @@ public class PlayerMovement : MonoBehaviour
         RotationMouseAction = playerInput.actions["RotationMouse"];
         InteractAction = playerInput.actions["Interact"];
         JumpAction = playerInput.actions["Jump"];
+        AttackAction = playerInput.actions["Attack"];
 
-        JumpAction.performed += (context) => {
+        JumpAction.performed += (context) => 
+        {
             if (isGrounded)
             {
                 rb.velocity += Vector3.up * jumpForce;
                 animator.SetTrigger("StartJump");
             }
+        };
+
+        AttackAction.performed += (context) =>
+        {
+            animator.SetTrigger("Attack");
         };
 
         OnGrounded += () =>
