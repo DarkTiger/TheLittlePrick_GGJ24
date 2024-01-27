@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Gamemanager : MonoBehaviour
 {
@@ -10,13 +11,15 @@ public class Gamemanager : MonoBehaviour
     
     [SerializeField] UiInventory uiInventory;
     [SerializeField] List<PickableObject> missionItems;
+    [SerializeField] List<PickableObject> powerUpItems;
     [SerializeField] float maxTime;
     [SerializeField] int maxMissionPickableDrops;
     [SerializeField] List<int> funnyLevelsObjectRateRandomize;
 
     private List<PickableObject> funnyRatioObjectSequence;
 
-    public float MissionPickableDropsChance = 0.1f;
+    public float MissionPickableDropsChance = 0.5f;
+    public float PowerUpPickableDropsChance = 1f;
 
     float uiTimerRemaining;
 
@@ -69,17 +72,24 @@ public class Gamemanager : MonoBehaviour
         {
             return ($"{(int)minutes}:{(int)seconds}");
         }
-
-        
     }
 
-    public PickableObject GetRandomPickable()
+    public PickableObject GetRandomPickable(pickableObjectType type)
     {
-        if (maxMissionPickableDrops <= 0) return null;
+        PickableObject pickable = null;
 
-        PickableObject pickable = missionItems[Random.Range(0, missionItems.Count)];
-        missionItems.Remove(pickable);
-        maxMissionPickableDrops--;
+        if (type == pickableObjectType.Mission)
+        {
+            if (maxMissionPickableDrops <= 0) return null;
+
+            pickable = missionItems[Random.Range(0, missionItems.Count)];
+            missionItems.Remove(pickable);
+            maxMissionPickableDrops--;
+        }
+        else
+        {
+            pickable = powerUpItems[Random.Range(0, powerUpItems.Count)];
+        }
 
         return pickable;
     }

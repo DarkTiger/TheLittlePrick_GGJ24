@@ -5,6 +5,9 @@ using UnityEngine;
 public class inventory : MonoBehaviour
 {
     [SerializeField] private GameObject missionObjectEquiped;
+
+    public static inventory Instance = null;
+
     private bool _missionEquiped=false;
 
     public bool MissionEquiped
@@ -41,6 +44,12 @@ public class inventory : MonoBehaviour
 
     PlayerMovement player;
 
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void Start()
     {
         player=GetComponent<PlayerMovement>();
@@ -53,7 +62,7 @@ public class inventory : MonoBehaviour
             return;
         }
 
-        player.GetComponent<Animator>().SetTrigger("Pick-up");
+        
         
 
         PickableObject newObject= obj.GetComponent<PickableObject>();
@@ -78,32 +87,37 @@ public class inventory : MonoBehaviour
                         SetMissionObject(newObject);
                     }
 
+                    player.GetComponent<Animator>().SetTrigger("Pick-up");
                     canInteract = false;
                     StartCoroutine(StartInteractionCD());
                     break;
-                case pickableObjectType.Funny:
+                case pickableObjectType.PowerUp:
 
                     if (funnyObjectEquiped != null)
                     {
-                        funnyObjectEquiped.SetActive(true);
-                        funnyObjectEquiped.transform.localPosition = Vector3.up;
-                        funnyObjectEquiped.transform.parent = null;
-                        funnyObjectEquiped.GetComponent<Rigidbody>().AddForce(GenerateRandomDirection() * throwForce, ForceMode.Impulse);
+                        //funnyObjectEquiped.SetActive(true);
+                        //funnyObjectEquiped.transform.localPosition = Vector3.up;
+                        //funnyObjectEquiped.transform.parent = null;
+                        //funnyObjectEquiped.GetComponent<Rigidbody>().AddForce(GenerateRandomDirection() * throwForce, ForceMode.Impulse);
 
-                        Debug.Log(GenerateRandomDirection() * throwForce);
+                        //Debug.Log(GenerateRandomDirection() * throwForce);
 
-                        SetFunnyObject(newObject);
+                        //SetFunnyObject(newObject);
                     }
                     else
                     {
+                        player.GetComponent<Animator>().SetTrigger("Pick-up");
                         SetFunnyObject(newObject);
+
+                        canInteract = false;
+                        StartCoroutine(StartInteractionCD());
                     }
+                    
                     break;
             }
             
 
-            canInteract= false;
-            StartCoroutine(StartInteractionCD());
+            
         }
     }
 
@@ -120,12 +134,13 @@ public class inventory : MonoBehaviour
         }
         else
         {
+            missionObjectEquiped = null;
             MissionEquiped = false;
         }
         
     }
 
-    private void SetFunnyObject(PickableObject newObject)
+    public void SetFunnyObject(PickableObject newObject)
     {
         if (newObject!=null)
         {
@@ -135,12 +150,15 @@ public class inventory : MonoBehaviour
             funnyObjectEquiped.SetActive(false);
 
             FunnyEquiped = true;
+
+            PlayerMovement.Instance.Animator.SetInteger("AttackIndex", 1);
+            PlayerMovement.Instance.PlayPowerUpAttackLoop();
         }
         else
         {
+            funnyObjectEquiped = null;
             FunnyEquiped = false;
-        }
-        
+        }      
     }
 
     IEnumerator StartInteractionCD()
