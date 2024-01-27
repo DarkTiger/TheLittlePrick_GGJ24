@@ -14,6 +14,8 @@ public class PrinceNpc : MonoBehaviour
 
     [SerializeField] Slider funnyBarSlider;
 
+    [SerializeField] JesterJokes jesterJokes;
+
     private void Start()
     {
         funnyLevel = Gamemanager.instance.FunnyScore;
@@ -70,6 +72,13 @@ public class PrinceNpc : MonoBehaviour
             if(playerObject!=null && playerObject.GetComponent<PickableObject>().objectType== pickableObjectType.Mission)
             {
                 //fai animazione
+
+                jesterJokes.gameObject.SetActive(true);
+                Debug.Log(jesterJokes.gameObject);
+
+                jesterJokes.StartJokesAnimation(playerObject.GetComponent<PickableObject>().GetMissionType());
+
+                jesterJokes.StartEvent();
 
                 AddFunnyScore(playerObject.GetComponent<PickableObject>().GetFunnyLevel());
 

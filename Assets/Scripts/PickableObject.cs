@@ -17,7 +17,17 @@ public class PickableObject : Interactable
 
     [SerializeField] int funnyLevel=0;
 
-    
+    private MissionObjectType missionType;
+
+    private void Start()
+    {
+        if(objectType == pickableObjectType.Mission)
+        {
+            missionType=GetComponent<MissionObjectType>();
+        }
+    }
+
+
     public override void Interact(GameObject interacter)
     {
         base.Interact(interacter);
@@ -33,6 +43,11 @@ public class PickableObject : Interactable
     public pickableObjectType GetObjectType()
     {
         return objectType;
+    }
+
+    public MissionObjectEventType GetMissionType()
+    {
+        return missionType.EventType();
     }
 
     public int GetFunnyLevel()
