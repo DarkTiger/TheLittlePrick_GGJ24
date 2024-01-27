@@ -40,7 +40,8 @@ public class JesterJokes : MonoBehaviour
 
     public void StartEvent()
     {
-        CamChangePriority(Gamemanager.instance.mainCamera2, Gamemanager.instance.mainCamera1);
+        //CamChangePriority(Gamemanager.instance.mainCamera2, Gamemanager.instance.mainCamera1);
+        Gamemanager.instance.billBoardEnabled = false;
         player.SetActive(false);
         UI.SetActive(false);
 
@@ -49,7 +50,8 @@ public class JesterJokes : MonoBehaviour
 
     public void EndEvent()
     {
-        CamChangePriority(Gamemanager.instance.mainCamera1, Gamemanager.instance.mainCamera2);
+        //CamChangePriority(Gamemanager.instance.mainCamera1, Gamemanager.instance.mainCamera2);
+        Gamemanager.instance.billBoardEnabled = true;
         player.SetActive(true);
         UI.SetActive(true);
         
@@ -68,10 +70,15 @@ public class JesterJokes : MonoBehaviour
         animator.SetTrigger("Lose");
     }
 
-    public void CamChangePriority(Camera a, Camera b)
-    {
-        a.depth = 0;
-        b.depth = -10;
-    }
+    //public void CamChangePriority(Camera a, Camera b)
+    //{
+    //    a.tag = "MainCamera";
+    //    a.enabled = true;
+
+    //    b.tag = "Untagged";
+    //    b.enabled = false;
+    //    a.depth = 0;
+    //    b.depth = -10;
+    //}
 
 }

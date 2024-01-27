@@ -78,6 +78,12 @@ public class PrinceNpc : MonoBehaviour
 
                 jesterJokes.StartJokesAnimation(playerObject.GetComponent<PickableObject>().GetMissionType());
 
+                gameObject.transform.eulerAngles = new Vector3(
+    gameObject.transform.eulerAngles.x,
+       180,
+    gameObject.transform.eulerAngles.z
+);
+
                 jesterJokes.StartEvent();
 
                 AddFunnyScore(playerObject.GetComponent<PickableObject>().GetFunnyLevel());

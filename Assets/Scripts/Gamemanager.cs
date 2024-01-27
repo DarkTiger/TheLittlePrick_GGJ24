@@ -26,6 +26,8 @@ public class Gamemanager : MonoBehaviour
     public Camera mainCamera1;
     public Camera mainCamera2;
 
+    public bool billBoardEnabled = true;
+
 
     float _funnyScore = 0;
 
