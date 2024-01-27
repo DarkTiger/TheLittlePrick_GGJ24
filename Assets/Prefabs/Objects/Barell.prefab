@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a36b1b6ab351d14daefe6bd19614a5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitToDestroy: 7
+  hitToDestroy: 3
   hitClips:
   - {fileID: 8300000, guid: 01975cb9ac430ed4895667f342fc9546, type: 3}
   - {fileID: 8300000, guid: ffc1bed079ab9044f8a67dbc56807d95, type: 3}
