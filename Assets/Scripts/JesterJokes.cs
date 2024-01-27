@@ -42,6 +42,7 @@ public class JesterJokes : MonoBehaviour
     {
         //CamChangePriority(Gamemanager.instance.mainCamera2, Gamemanager.instance.mainCamera1);
         Gamemanager.instance.billBoardEnabled = false;
+        Gamemanager.instance.timerStopped = true;
         player.SetActive(false);
         UI.SetActive(false);
 
@@ -52,6 +53,7 @@ public class JesterJokes : MonoBehaviour
     {
         //CamChangePriority(Gamemanager.instance.mainCamera1, Gamemanager.instance.mainCamera2);
         Gamemanager.instance.billBoardEnabled = true;
+        Gamemanager.instance.timerStopped = false;
         player.SetActive(true);
         UI.SetActive(true);
         

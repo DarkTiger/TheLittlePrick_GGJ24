@@ -84,6 +84,7 @@ GameObject:
   - component: {fileID: 1517843998732235658}
   - component: {fileID: 2160178280780911511}
   - component: {fileID: 7773411527769817496}
+  - component: {fileID: 4868020552523552615}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -205,6 +206,7 @@ MonoBehaviour:
   rotationSpeed: 1.25
   jumpForce: 7.5
   mouseSpeed: 0.25
+  powerUpDuration: 10
   hitEffect: {fileID: 6872172790127905327, guid: 337913c8280e88e42b03327408777feb,
     type: 3}
   attackWhooshClips:
@@ -267,7 +269,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1858916076, guid: 81b88af73ca11b34d8afd14109f14c92, type: 3}
+  m_Sprite: {fileID: 1574885188, guid: 99fc30a7bbf6e3f40aff149e11532892, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -316,6 +318,36 @@ MonoBehaviour:
   funnyObjectEquiped: {fileID: 0}
   throwForce: 10
   interactionCD: 0.5
+--- !u!114 &4868020552523552615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8351355005761381980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: c87c9eb37dc223c44b7dbbd178bb2a99, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8351355005761381980}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &8369727920050173148
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,7 +361,7 @@ GameObject:
   - component: {fileID: 7481548734518787440}
   - component: {fileID: 3532465571581181738}
   m_Layer: 3
-  m_Name: Main Camera
+  m_Name: ' Camera'
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

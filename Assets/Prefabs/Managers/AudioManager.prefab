@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861c354b27720224c9df97eb5380add9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSourcePrefab: {fileID: 965970385563753464, guid: e0ebe168918b53b41b049f2bd66b6898,
+  audioSourcePrefab: {fileID: 6779656754818364374, guid: 09e9e498e50d05d4cb9107ef0d83c758,
     type: 3}
   groupEffect: {fileID: -9127003133450668599, guid: d5f90e0e5e036fa46b46fa3d714d0100,
     type: 2}
