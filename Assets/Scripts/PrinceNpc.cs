@@ -9,6 +9,7 @@ public class PrinceNpc : MonoBehaviour
     private float funnyLevel;
     private float currentLevel;
 
+    
     [SerializeField] float increasePerSecond;
 
     [SerializeField] Slider funnyBarSlider;

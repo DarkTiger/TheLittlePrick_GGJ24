@@ -6,6 +6,7 @@ public class LaughBarUIVisualizer : MonoBehaviour
 {
     [SerializeField] GameObject LaughBar;
 
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.GetComponent<PlayerMovement>() != null)

@@ -21,6 +21,7 @@ public class Gamemanager : MonoBehaviour
     public float MissionPickableDropsChance = 0.5f;
     public float PowerUpPickableDropsChance = 1f;
 
+
     float _funnyScore = 0;
 
     public float FunnyScore
