@@ -53,4 +53,4 @@ MonoBehaviour:
   maxTime: 600
   maxMissionPickableDrops: 4
   funnyLevelsObjectRateRandomize: 280000001e0000000a000000f6ffffff
-  MissionPickableDropsChance: 100
+  MissionPickableDropsChance: 0.5

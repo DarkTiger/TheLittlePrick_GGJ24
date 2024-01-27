@@ -1,5 +1,6 @@
 
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpForce = 1f;
     [SerializeField] float mouseSpeed = 0.1f;
     [SerializeField] GameObject hitEffect = null;
-    [SerializeField] AudioClip attackWhooshClip;
+    [SerializeField] AudioClip[] attackWhooshClips;
     [SerializeField] AudioClip[] stepsClips;
     [SerializeField] AudioClip[] jumpClips;
 
@@ -116,11 +117,11 @@ public class PlayerMovement : MonoBehaviour
             lastStepTime += Time.deltaTime;
         }
 
-        if (lastSpeedDir <= -0.25f)
+        if (lastSpeedDir <= -0.5f)
         {
             spriteRenderer.flipX = true;
         }
-        else if (lastSpeedDir >= 0.25f)
+        else if (lastSpeedDir >= 0.5f)
         {
             spriteRenderer.flipX = false;
         }
@@ -129,13 +130,16 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator Attack(float damageDelay)
     {
         animator.SetTrigger("Attack");
-        AudioManager.instance.PlayAudioClip(attackWhooshClip, transform.position);
+        AudioManager.instance.PlayAudioClip(attackWhooshClips[Random.Range(0, attackWhooshClips.Length)], transform.position);
 
         yield return new WaitForSeconds(damageDelay);
 
-        Ray ray = new Ray(transform.position + (Vector3.up * 0.5f), (transform.right * (lastSpeedDir < 0 ? -1f : 1f)));
+        Ray ray1 = new Ray(transform.position + (Vector3.up * 0.3f) + (transform.forward * 0.15f), (transform.right * (spriteRenderer.flipX? -1f : 1f)));
+        Ray ray2 = new Ray(transform.position + (Vector3.up * 0.3f) + (transform.forward * 0.25f), (transform.right * (spriteRenderer.flipX ? -1f : 1f)));
 
-        if (Physics.Raycast(ray, out RaycastHit hit, 0.5f, -1, QueryTriggerInteraction.Ignore))
+        RaycastHit hit;
+        if (Physics.Raycast(ray1, out hit, 0.5f, -1, QueryTriggerInteraction.Ignore) ||
+            Physics.Raycast(ray2, out hit, 0.5f, -1, QueryTriggerInteraction.Ignore))
         {
             Destructible destructible = hit.collider.GetComponent<Destructible>();
 

@@ -71,8 +71,6 @@ public class inventory : MonoBehaviour
                         missionObjectEquiped.transform.parent = null;
                         missionObjectEquiped.GetComponent<Rigidbody>().AddForce(GenerateRandomDirection() * throwForce, ForceMode.Impulse);
 
-                        Debug.Log(GenerateRandomDirection() * throwForce);
-
                         SetMissionObject(newObject);
                     }
                     else
