@@ -5009,7 +5009,7 @@ PrefabInstance:
     - target: {fileID: 5508481985740870019, guid: e0ebe168918b53b41b049f2bd66b6898,
         type: 3}
       propertyPath: PowerUpPickableDropsChance
-      value: 100
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5508481985740870019, guid: e0ebe168918b53b41b049f2bd66b6898,
         type: 3}
