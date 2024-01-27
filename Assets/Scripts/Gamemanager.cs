@@ -21,6 +21,8 @@ public class Gamemanager : MonoBehaviour
     public float MissionPickableDropsChance = 0.5f;
     public float PowerUpPickableDropsChance = 1f;
 
+    [SerializeField] JesterJokes jesterEvent;
+
 
     float _funnyScore = 0;
 

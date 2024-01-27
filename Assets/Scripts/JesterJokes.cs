@@ -52,4 +52,14 @@ public class JesterJokes : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    public void WinEvent()
+    {
+        animator.SetTrigger("Win");
+    }
+
+    public void LoseEvent()
+    {
+        animator.SetTrigger("Lose");
+    }
+
 }
