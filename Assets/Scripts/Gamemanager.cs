@@ -23,6 +23,9 @@ public class Gamemanager : MonoBehaviour
 
     [SerializeField] JesterJokes jesterEvent;
 
+    public Camera mainCamera1;
+    public Camera mainCamera2;
+
 
     float _funnyScore = 0;
 
@@ -127,6 +130,8 @@ public class Gamemanager : MonoBehaviour
 
         funnyRatioObjectSequence.Sort((x,y)=>y.GetFunnyLevel().CompareTo(x.GetFunnyLevel()));
     }
+
+    
 
     
 

@@ -56,3 +56,6 @@ MonoBehaviour:
   funnyLevelsObjectRateRandomize: 280000001e0000000a000000f6ffffff
   MissionPickableDropsChance: 100
   PowerUpPickableDropsChance: 1
+  jesterEvent: {fileID: 0}
+  mainCamera1: {fileID: 0}
+  mainCamera2: {fileID: 0}

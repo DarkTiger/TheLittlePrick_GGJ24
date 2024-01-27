@@ -101,7 +101,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 128
+        y: 320
         width: 64
         height: 64
       alignment: 7
@@ -122,7 +122,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 128
+        y: 320
         width: 64
         height: 64
       alignment: 7
@@ -143,7 +143,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 128
+        y: 320
         width: 64
         height: 64
       alignment: 7
@@ -163,8 +163,8 @@ TextureImporter:
       name: PrickIdle_3
       rect:
         serializedVersion: 2
-        x: 192
-        y: 128
+        x: 0
+        y: 256
         width: 64
         height: 64
       alignment: 7
@@ -184,8 +184,8 @@ TextureImporter:
       name: PrickIdle_4
       rect:
         serializedVersion: 2
-        x: 256
-        y: 128
+        x: 64
+        y: 256
         width: 64
         height: 64
       alignment: 7
@@ -205,8 +205,8 @@ TextureImporter:
       name: PrickIdle_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
+        x: 128
+        y: 256
         width: 64
         height: 64
       alignment: 7
@@ -226,8 +226,8 @@ TextureImporter:
       name: PrickIdle_6
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
+        x: 0
+        y: 192
         width: 64
         height: 64
       alignment: 7
@@ -247,8 +247,8 @@ TextureImporter:
       name: PrickIdle_7
       rect:
         serializedVersion: 2
-        x: 128
-        y: 64
+        x: 64
+        y: 192
         width: 64
         height: 64
       alignment: 7
@@ -268,8 +268,8 @@ TextureImporter:
       name: PrickIdle_8
       rect:
         serializedVersion: 2
-        x: 192
-        y: 64
+        x: 128
+        y: 192
         width: 64
         height: 64
       alignment: 7
@@ -289,8 +289,8 @@ TextureImporter:
       name: PrickIdle_9
       rect:
         serializedVersion: 2
-        x: 256
-        y: 64
+        x: 0
+        y: 128
         width: 64
         height: 64
       alignment: 7
@@ -310,8 +310,8 @@ TextureImporter:
       name: PrickIdle_10
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 64
+        y: 128
         width: 64
         height: 64
       alignment: 7
@@ -331,8 +331,8 @@ TextureImporter:
       name: PrickIdle_11
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
+        x: 128
+        y: 128
         width: 64
         height: 64
       alignment: 7
@@ -352,8 +352,8 @@ TextureImporter:
       name: PrickIdle_12
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
+        x: 0
+        y: 64
         width: 64
         height: 64
       alignment: 7
@@ -373,8 +373,8 @@ TextureImporter:
       name: PrickIdle_13
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
+        x: 64
+        y: 64
         width: 64
         height: 64
       alignment: 7
@@ -386,6 +386,90 @@ TextureImporter:
       bones: []
       spriteID: 39b464786abc0cd418bcb718285ac03c
       internalID: 1661052398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrickIdle_14
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36934506d5a466a47be6ce8fcfd8d781
+      internalID: 124369437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrickIdle_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15f239ba2d566ad438a1cc01cd4efd6d
+      internalID: 2042284508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrickIdle_16
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc5495fde0b0233498c5dee4e21ab842
+      internalID: 1602448346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PrickIdle_17
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 671499de2443e7541bdf6d71e4d187b6
+      internalID: -1247557417
       vertices: []
       indices: 
       edges: []
@@ -407,6 +491,10 @@ TextureImporter:
       PrickIdle_11: 638617289
       PrickIdle_12: 608690426
       PrickIdle_13: 1661052398
+      PrickIdle_14: 124369437
+      PrickIdle_15: 2042284508
+      PrickIdle_16: 1602448346
+      PrickIdle_17: -1247557417
       PrickIdle_2: 1251261650
       PrickIdle_3: 306199772
       PrickIdle_4: -617250993
