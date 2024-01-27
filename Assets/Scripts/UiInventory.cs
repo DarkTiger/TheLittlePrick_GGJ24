@@ -18,8 +18,7 @@ public class UiInventory : MonoBehaviour
 
     [Header("Timer")]
     [SerializeField] TextMeshProUGUI timerText;
-
-
+    
 
     [SerializeField] inventory playerInventory;
 
@@ -72,8 +71,6 @@ public class UiInventory : MonoBehaviour
     {
         timerText.text = time;
     }
-
-
 
    
 

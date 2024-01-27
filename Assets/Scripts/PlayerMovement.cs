@@ -3,6 +3,7 @@ using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.VFX;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,11 +11,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float rotationSpeed = 1f;
     [SerializeField] float jumpForce = 1f;
     [SerializeField] float mouseSpeed = 0.1f;
-    [SerializeField] float powerUpDuration = 10f;
+    [SerializeField] float powerUpDuration = 15f;
     [SerializeField] GameObject hitEffect = null;
     [SerializeField] AudioClip[] attackWhooshClips;
     [SerializeField] AudioClip[] stepsClips;
     [SerializeField] AudioClip[] jumpClips;
+    [SerializeField] VisualEffect powerfulVFX = null;
 
     public InputAction MovementAction { get; private set; }
     public InputAction RotationAction { get; private set; }
@@ -35,8 +37,12 @@ public class PlayerMovement : MonoBehaviour
     System.Action OnGrounded;
     float lastSpeedDir = 0f;
     float lastStepTime = 0f;
+    float attackRange = 0.5f;
+    float attackOffset1 = 0.15f;
+    float attackOffset2 = 0.20f;
+    float attackOffset3 = 0.25f;
 
-    
+
 
     private void Awake()
     {
@@ -149,12 +155,14 @@ public class PlayerMovement : MonoBehaviour
 
     public void AttackAnimEvent()
     {
-        Ray ray1 = new Ray(transform.position + (Vector3.up * 0.3f) + (transform.forward * 0.15f), (transform.right * (spriteRenderer.flipX ? -1f : 1f)));
-        Ray ray2 = new Ray(transform.position + (Vector3.up * 0.3f) + (transform.forward * 0.25f), (transform.right * (spriteRenderer.flipX ? -1f : 1f)));
-
+        Ray ray1 = new Ray(transform.position + (Vector3.up * 0.3f) + (transform.forward * attackOffset1), (transform.right * (spriteRenderer.flipX ? -1f : 1f)));
+        Ray ray2 = new Ray(transform.position + (Vector3.up * 0.3f) + (transform.forward * attackOffset2), (transform.right * (spriteRenderer.flipX ? -1f : 1f)));
+        Ray ray3 = new Ray(transform.position + (Vector3.up * 0.3f) + (transform.forward * attackOffset3), (transform.right * (spriteRenderer.flipX ? -1f : 1f)));
+        
         RaycastHit hit;
-        if (Physics.Raycast(ray1, out hit, 0.5f, -1, QueryTriggerInteraction.Ignore) ||
-            Physics.Raycast(ray2, out hit, 0.5f, -1, QueryTriggerInteraction.Ignore))
+        if (Physics.Raycast(ray1, out hit, attackRange, -1, QueryTriggerInteraction.Ignore) ||
+            Physics.Raycast(ray2, out hit, attackRange, -1, QueryTriggerInteraction.Ignore) ||
+            Physics.Raycast(ray3, out hit, attackRange, -1, QueryTriggerInteraction.Ignore))
         {
             Destructible destructible = hit.collider.GetComponent<Destructible>();
 
@@ -173,9 +181,15 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator PowerUpAttackLoop()
     {
+        powerfulVFX.enabled = true;
         float duration = 0f;
-        float attackRate = 0.1f;
+        float attackRate = 0.075f;
         float lastAttackTime = 0f;
+        attackRange = 1f;
+        attackOffset1 = 0.0f;
+        attackOffset2 = 0.2f;
+        attackOffset3 = 0.4f;
+
 
         while (duration < powerUpDuration)
         {
@@ -190,6 +204,12 @@ public class PlayerMovement : MonoBehaviour
             yield return null;
         }
 
+        attackRange = 0.5f;
+        attackOffset1 = 0.15f;
+        attackOffset2 = 0.20f;
+        attackOffset3 = 0.25f;
+
+        powerfulVFX.enabled = false;
         inventory.Instance.SetFunnyObject(null);
         Animator.SetInteger("AttackIndex", 0);
     }
