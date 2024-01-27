@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEditor.Timeline.Actions;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float rotationSpeed = 1f;
     [SerializeField] float jumpForce = 1f;
     [SerializeField] float mouseSpeed = 0.1f;
+    [SerializeField] GameObject hitEffect = null;
 
     public InputAction MovementAction { get; private set; }
     public InputAction RotationAction { get; private set; }
@@ -25,6 +27,9 @@ public class PlayerMovement : MonoBehaviour
     bool lastGrounded = true;
     Action OnGrounded;
     float lastSpeedDir = 0f;
+
+    [Header("HitsSound")]
+    [SerializeField] AudioClip fistHitSoud;
 
 
     private void Awake()
@@ -52,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
 
         AttackAction.performed += (context) =>
         {
-            animator.SetTrigger("Attack");
+            StartCoroutine(Attack(0.1f));   
         };
 
         OnGrounded += () =>
@@ -95,5 +100,25 @@ public class PlayerMovement : MonoBehaviour
         }
         animator.SetBool("Running", Mathf.Abs(rb.velocity.x + rb.velocity.z) > 0.1f);
         spriteRenderer.flipX = lastSpeedDir < 0f;
+    }
+
+    private IEnumerator Attack(float damageDelay)
+    {
+        animator.SetTrigger("Attack");
+
+        yield return new WaitForSeconds(damageDelay);
+
+        Ray ray = new Ray(transform.position + (Vector3.up * 0.25f), (transform.right * (lastSpeedDir < 0 ? -0.5f : 0.5f)));
+
+        if (Physics.Raycast(ray, out RaycastHit hit, 0.5f, -1, QueryTriggerInteraction.Ignore))
+        {
+            Destructible destructible = hit.collider.GetComponent<Destructible>();
+
+            if (destructible)
+            {
+                Destroy(Instantiate(hitEffect, hit.point, Quaternion.identity), 1f);
+                destructible.GetHitDamage();
+            }
+        }
     }
 }

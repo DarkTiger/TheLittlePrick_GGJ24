@@ -39,7 +39,12 @@ public class inventory : MonoBehaviour
 
     [SerializeField] float interactionCD = 0.5f;
 
-    
+    PlayerMovement player;
+
+    private void Start()
+    {
+        player=GetComponent<PlayerMovement>();
+    }
 
     public void ChangeObject(GameObject obj)
     {
@@ -48,43 +53,56 @@ public class inventory : MonoBehaviour
             return;
         }
 
+        player.GetComponent<Animator>().SetTrigger("Pick-up");
+        
+
         PickableObject newObject= obj.GetComponent<PickableObject>();
 
         if ( newObject != null )
         {
-            if(newObject.GetObjectType()== pickableObjectType.Mission)
+            switch (newObject.GetObjectType())
             {
-                if(missionObjectEquiped!=null)
-                {
-                    missionObjectEquiped.SetActive(true);
-                    missionObjectEquiped.transform.parent = null;
-                    missionObjectEquiped.GetComponent<Rigidbody>().AddExplosionForce(throwForce, new Vector3(transform.localScale.x, 0), 0.3f);
+                case pickableObjectType.Mission:
 
-                    SetMissionObject(newObject);
-                }
-                else
-                {
-                    SetMissionObject(newObject);
-                }
+                    if (missionObjectEquiped != null)
+                    {
+                        missionObjectEquiped.SetActive(true);
+                        missionObjectEquiped.transform.localPosition = Vector3.up;
+                        missionObjectEquiped.transform.parent = null;
+                        missionObjectEquiped.GetComponent<Rigidbody>().AddForce(GenerateRandomDirection() * throwForce, ForceMode.Impulse);
 
-                canInteract = false;
-                StartCoroutine(StartInteractionCD());
+                        Debug.Log(GenerateRandomDirection() * throwForce);
+
+                        SetMissionObject(newObject);
+                    }
+                    else
+                    {
+                        SetMissionObject(newObject);
+                    }
+
+                    canInteract = false;
+                    StartCoroutine(StartInteractionCD());
+                    break;
+                case pickableObjectType.Funny:
+
+                    if (funnyObjectEquiped != null)
+                    {
+                        funnyObjectEquiped.SetActive(true);
+                        funnyObjectEquiped.transform.localPosition = Vector3.up;
+                        funnyObjectEquiped.transform.parent = null;
+                        funnyObjectEquiped.GetComponent<Rigidbody>().AddForce(GenerateRandomDirection() * throwForce, ForceMode.Impulse);
+
+                        Debug.Log(GenerateRandomDirection() * throwForce);
+
+                        SetFunnyObject(newObject);
+                    }
+                    else
+                    {
+                        SetFunnyObject(newObject);
+                    }
+                    break;
             }
-            else if(newObject.GetObjectType() == pickableObjectType.Funny)
-            {
-                if (funnyObjectEquiped != null)
-                {
-                    funnyObjectEquiped.SetActive(true);
-                    funnyObjectEquiped.transform.parent = null;
-                    funnyObjectEquiped.GetComponent<Rigidbody>().AddForce(Vector3.right * throwForce);
-
-                    SetFunnyObject(newObject);
-                }
-                else
-                {
-                    SetFunnyObject(newObject);
-                }
-            }
+            
 
             canInteract= false;
             StartCoroutine(StartInteractionCD());
@@ -93,22 +111,38 @@ public class inventory : MonoBehaviour
 
     private void SetMissionObject(PickableObject newObject)
     {
-        missionObjectEquiped = newObject.gameObject;
-        missionObjectEquiped.transform.parent = gameObject.transform;
-        missionObjectEquiped.transform.localPosition = Vector3.zero;
-        missionObjectEquiped.SetActive(false);
+        if(newObject!=null)
+        {
+            missionObjectEquiped = newObject.gameObject;
+            missionObjectEquiped.transform.parent = gameObject.transform;
+            missionObjectEquiped.transform.localPosition = Vector3.zero;
+            missionObjectEquiped.SetActive(false);
 
-        MissionEquiped = true;
+            MissionEquiped = true;
+        }
+        else
+        {
+            MissionEquiped = false;
+        }
+        
     }
 
     private void SetFunnyObject(PickableObject newObject)
     {
-        funnyObjectEquiped = newObject.gameObject;
-        funnyObjectEquiped.transform.parent = gameObject.transform;
-        funnyObjectEquiped.transform.localPosition = Vector3.zero;
-        funnyObjectEquiped.SetActive(false);
+        if (newObject!=null)
+        {
+            funnyObjectEquiped = newObject.gameObject;
+            funnyObjectEquiped.transform.parent = gameObject.transform;
+            funnyObjectEquiped.transform.localPosition = Vector3.zero;
+            funnyObjectEquiped.SetActive(false);
 
-        FunnyEquiped = true;
+            FunnyEquiped = true;
+        }
+        else
+        {
+            FunnyEquiped = false;
+        }
+        
     }
 
     IEnumerator StartInteractionCD()
@@ -132,5 +166,10 @@ public class inventory : MonoBehaviour
     public GameObject GetFunnyObject()
     {
         return funnyObjectEquiped;
+    }
+
+    public Vector3 GenerateRandomDirection()
+    {
+        return new Vector3(Random.Range(-1f,1f), Random.Range(0f,1f),Random.Range(-1f,1f));
     }
 }
