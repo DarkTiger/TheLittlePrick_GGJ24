@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,10 +11,13 @@ public class AnimationAudioController : MonoBehaviour
     public List<AudioClip> fart;
     public List<AudioClip> sax;
     public List<AudioClip> dirty;
+    public List<AudioClip> gameOver;
     int contaAladin = 0;
     int contaSax = 0;
     int contaDirty = 0;
     int contaFart = 0;
+    int countGameOver = 0;
+
     public void PlayAladin()
     {
         
@@ -66,5 +70,13 @@ public class AnimationAudioController : MonoBehaviour
     {
         audioSource.Stop();
         audioSource.clip = null;
+    }
+
+    public void PlayGameOver()
+    {
+        audioSource.clip = gameOver[countGameOver];
+        audioSource.Play();
+        countGameOver++;
+        if(countGameOver> gameOver.Count -1) countGameOver = 0;
     }
 }
