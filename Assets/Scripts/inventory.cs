@@ -140,6 +140,7 @@ public class inventory : MonoBehaviour
         }
         
     }
+     
 
     public void SetFunnyObject(PickableObject newObject)
     {
