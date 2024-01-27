@@ -29,10 +29,10 @@ public class DialogueSystem : MonoBehaviour
     private List<Dialogue> currentSequence = new List<Dialogue>();
 
 
-    public void Start()
-    {
-        PlaySequence(princeSequence);
-    }
+    //public void Start()
+    //{
+    //    PlaySequence(princeSequence);
+    //}
 
 
     // Update is called once per frame
