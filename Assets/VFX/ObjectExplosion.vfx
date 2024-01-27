@@ -18,8 +18,8 @@ MonoBehaviour:
       serializedVersion: 2
       x: 264
       y: 295
-      width: 487
-      height: 2267
+      width: 474
+      height: 2233
     contents:
     - model: {fileID: 8926484042661614700}
       id: 0
@@ -39,7 +39,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -167
     y: 295
-    width: 918
+    width: 905
     height: 2267
 --- !u!114 &114350483966674976
 MonoBehaviour:
@@ -368,7 +368,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614893}
   - {fileID: 8926484042661614912}
   - {fileID: 8926484042661615013}
-  m_UIPosition: {x: 302, y: 710}
+  m_UIPosition: {x: 289, y: 800}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -1342,7 +1342,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614895}
   - {fileID: 8926484042661614910}
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 0
+  m_UICollapsed: 1
   m_UISuperCollapsed: 0
   m_MasterSlot: {fileID: 8926484042661614894}
   m_MasterData:
@@ -1720,7 +1720,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614907}
   - {fileID: 8926484042661614908}
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 0
+  m_UICollapsed: 1
   m_UISuperCollapsed: 0
   m_MasterSlot: {fileID: 8926484042661614894}
   m_MasterData:
