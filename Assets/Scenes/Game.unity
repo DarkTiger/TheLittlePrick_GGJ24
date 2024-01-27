@@ -5008,8 +5008,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5508481985740870019, guid: e0ebe168918b53b41b049f2bd66b6898,
         type: 3}
+      propertyPath: MissionPickableDropsChance
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508481985740870019, guid: e0ebe168918b53b41b049f2bd66b6898,
+        type: 3}
       propertyPath: PowerUpPickableDropsChance
-      value: 100
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5508481985740870019, guid: e0ebe168918b53b41b049f2bd66b6898,
         type: 3}
@@ -5017,6 +5022,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2417076974920026909, guid: e46f0d15cbbf0424b9575e9c327c4d28,
         type: 3}
+    - target: {fileID: 5508481985740870019, guid: e0ebe168918b53b41b049f2bd66b6898,
+        type: 3}
+      propertyPath: 'funnyLevelsObjectRateRandomize.Array.data[0]'
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508481985740870019, guid: e0ebe168918b53b41b049f2bd66b6898,
+        type: 3}
+      propertyPath: 'funnyLevelsObjectRateRandomize.Array.data[1]'
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508481985740870019, guid: e0ebe168918b53b41b049f2bd66b6898,
+        type: 3}
+      propertyPath: 'funnyLevelsObjectRateRandomize.Array.data[2]'
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508481985740870019, guid: e0ebe168918b53b41b049f2bd66b6898,
+        type: 3}
+      propertyPath: 'funnyLevelsObjectRateRandomize.Array.data[3]'
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5135,7 +5160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f703a3c2c5d777849bbd9b4f7f477391, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LaughBar: {fileID: 0}
+  LaughBar: {fileID: 1976450639}
 --- !u!135 &711157164
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5151,7 +5176,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -11965,7 +11990,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -11983,6 +12008,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf8368ca3f1424d41bd31456784b3e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  increasePerSecond: 3
+  funnyBarSlider: {fileID: 1976450638}
 --- !u!1001 &1660838822
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13784,6 +13811,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b50ba25ce5a9c34dbb4584bffba8b3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1976450638 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 727805244784284635, guid: 981ba6dfedd5496459c212fe1a5f5361,
+    type: 3}
+  m_PrefabInstance: {fileID: 1976450636}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1976450639 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2216041280648640388, guid: 981ba6dfedd5496459c212fe1a5f5361,
+    type: 3}
+  m_PrefabInstance: {fileID: 1976450636}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1984396850
 PrefabInstance:
   m_ObjectHideFlags: 0

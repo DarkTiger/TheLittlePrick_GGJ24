@@ -21,6 +21,19 @@ public class Gamemanager : MonoBehaviour
     public float MissionPickableDropsChance = 0.5f;
     public float PowerUpPickableDropsChance = 1f;
 
+    float _funnyScore = 0;
+
+    public float FunnyScore
+    {
+        get => _funnyScore;
+
+        set 
+        {
+            _funnyScore = value;
+            onFunnyScoreChanged.Invoke(value);
+        }
+    }
+
     float uiTimerRemaining;
 
 
@@ -111,4 +124,9 @@ public class Gamemanager : MonoBehaviour
 
         funnyRatioObjectSequence.Sort((x,y)=>y.GetFunnyLevel().CompareTo(x.GetFunnyLevel()));
     }
+
+    
+
+    public delegate void OnFunnyScoreChanged(float value);
+    public event OnFunnyScoreChanged onFunnyScoreChanged;  
 }

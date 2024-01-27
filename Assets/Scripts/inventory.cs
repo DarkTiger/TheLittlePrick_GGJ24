@@ -121,7 +121,7 @@ public class inventory : MonoBehaviour
         }
     }
 
-    private void SetMissionObject(PickableObject newObject)
+    public void SetMissionObject(PickableObject newObject)
     {
         if(newObject!=null)
         {

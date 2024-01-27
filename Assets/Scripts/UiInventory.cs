@@ -19,6 +19,8 @@ public class UiInventory : MonoBehaviour
     [Header("Timer")]
     [SerializeField] TextMeshProUGUI timerText;
 
+
+
     [SerializeField] inventory playerInventory;
 
     private void Start()
