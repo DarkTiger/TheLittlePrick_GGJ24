@@ -207,7 +207,9 @@ MonoBehaviour:
   mouseSpeed: 0.25
   hitEffect: {fileID: 6872172790127905327, guid: 337913c8280e88e42b03327408777feb,
     type: 3}
-  attackWhooshClip: {fileID: 8300000, guid: d38b6f5c84f39aa49a54dd9066f7a177, type: 3}
+  attackWhooshClips:
+  - {fileID: 8300000, guid: 242cd725d5b6da54aa6868e71c850191, type: 3}
+  - {fileID: 8300000, guid: de1d390eebea8534eb4278d1081d703e, type: 3}
   stepsClips:
   - {fileID: 8300000, guid: a3ac2fc98abcbdc47bace1000b716691, type: 3}
   - {fileID: 8300000, guid: a5ca9f2135231124c8a66a01239575cd, type: 3}

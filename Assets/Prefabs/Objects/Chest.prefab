@@ -116,13 +116,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitToDestroy: 10
   hitClips:
-  - {fileID: 8300000, guid: 01975cb9ac430ed4895667f342fc9546, type: 3}
-  - {fileID: 8300000, guid: ffc1bed079ab9044f8a67dbc56807d95, type: 3}
+  - {fileID: 8300000, guid: 3740648e3b927804f8ede97e40c26e7d, type: 3}
+  - {fileID: 8300000, guid: 5c1cd1026c716134d96f687a3b7fadf5, type: 3}
   destroyClips:
-  - {fileID: 8300000, guid: 1ed23a657ad87364facd6d4e4ab63dc0, type: 3}
-  - {fileID: 8300000, guid: 6f1ee8c9f26a3f6429eafd444f686aa5, type: 3}
-  - {fileID: 8300000, guid: 6991dbffc9e8be54eab8375f885c4828, type: 3}
-  - {fileID: 8300000, guid: 156c7f898ad08904097271a56a26f224, type: 3}
+  - {fileID: 8300000, guid: 5c8b3bc3bcc56fc42b8e752ff7e71774, type: 3}
+  - {fileID: 8300000, guid: fb0e200b2538b8b43b8e9c3389853e94, type: 3}
 --- !u!135 &2549521972876541560
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -142,7 +140,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.3
+  m_Radius: 0.15
   m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!1 &4770181710262283452
 GameObject:
