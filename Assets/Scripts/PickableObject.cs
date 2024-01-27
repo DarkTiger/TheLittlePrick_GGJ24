@@ -39,11 +39,4 @@ public class PickableObject : Interactable
     {
         return funnyLevel;
     }
-
-    public void SetFunnyLevel(int value)
-    {
-        funnyLevel= value;
-    }
-
-    
 }

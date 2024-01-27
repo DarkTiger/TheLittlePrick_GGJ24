@@ -52,5 +52,4 @@ MonoBehaviour:
   - {fileID: 5118949499954558945, guid: edf23def59751e1418ddef41a0055a9d, type: 3}
   maxTime: 600
   maxMissionPickableDrops: 4
-  funnyLevelsObjectRateRandomize: 280000001e0000000a000000f6ffffff
-  MissionPickableDropsChance: 100
+  MissionPickableDropsChance: 0.5

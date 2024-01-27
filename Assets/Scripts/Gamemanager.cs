@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class Gamemanager : MonoBehaviour
@@ -12,10 +11,6 @@ public class Gamemanager : MonoBehaviour
     [SerializeField] List<PickableObject> missionItems;
     [SerializeField] float maxTime;
     [SerializeField] int maxMissionPickableDrops;
-    [SerializeField] List<int> funnyLevelsObjectRateRandomize;
-
-    private List<PickableObject> funnyRatioObjectSequence;
-
     public float MissionPickableDropsChance = 0.1f;
 
     float uiTimerRemaining;
@@ -31,20 +26,12 @@ public class Gamemanager : MonoBehaviour
         {
             instance = this;
 
-
-
         }
     }
 
     private void Start()
     {
         uiTimerRemaining = maxTime;
-
-        funnyRatioObjectSequence= new List<PickableObject> ();
-
-        SetFunnyLevel();
-
-
     }
 
     private void Update()
@@ -61,44 +48,17 @@ public class Gamemanager : MonoBehaviour
         float minutes=time/60;
         float seconds=time%60;
 
-        if (seconds < 10)
-        {
-            return ($"{(int)minutes}:0{(int)seconds}");
-        }
-        else
-        {
-            return ($"{(int)minutes}:{(int)seconds}");
-        }
-
-        
+        return ($"{(int)minutes}:{(int)seconds}");
     }
 
     public PickableObject GetRandomPickable()
     {
         if (maxMissionPickableDrops <= 0) return null;
 
-        PickableObject pickable = missionItems[Random.Range(0, missionItems.Count)];
+        PickableObject pickable = missionItems[Random.Range(0, missionItems.Count - 1)];
         missionItems.Remove(pickable);
         maxMissionPickableDrops--;
 
         return pickable;
-    }
-
-    private void SetFunnyLevel()
-    {
-        foreach(PickableObject pickable in missionItems)
-        {
-            int index = Random.Range(0, funnyLevelsObjectRateRandomize.Count);
-
-            int value = funnyLevelsObjectRateRandomize[index];
-
-            funnyLevelsObjectRateRandomize.RemoveAt(index);
-
-            pickable.SetFunnyLevel(value);
-        }
-
-        funnyRatioObjectSequence = missionItems.ToList();
-
-        funnyRatioObjectSequence.Sort((x,y)=>y.GetFunnyLevel().CompareTo(x.GetFunnyLevel()));
     }
 }
