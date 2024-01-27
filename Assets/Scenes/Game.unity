@@ -11827,6 +11827,11 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6177742564570435361, guid: 3e8a8442354ce214d92a23f927ae9cdf,
+        type: 3}
+      propertyPath: m_Depth
+      value: -0.16
+      objectReference: {fileID: 0}
     - target: {fileID: 6915138664059185847, guid: 3e8a8442354ce214d92a23f927ae9cdf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11880,7 +11885,7 @@ PrefabInstance:
     - target: {fileID: 7075118908813879463, guid: 3e8a8442354ce214d92a23f927ae9cdf,
         type: 3}
       propertyPath: m_TagString
-      value: MainCamera
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8634071444955441768, guid: 3e8a8442354ce214d92a23f927ae9cdf,
         type: 3}
