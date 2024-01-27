@@ -18,6 +18,7 @@ public class inventory : MonoBehaviour
         {
             _missionEquiped = value;
             OnMissionObjectBool.Invoke(_missionEquiped);
+
         }
     }
     
