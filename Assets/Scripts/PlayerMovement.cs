@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] AudioClip[] stepsClips;
     [SerializeField] AudioClip[] jumpClips;
     [SerializeField] VisualEffect powerfulVFX = null;
+    [SerializeField] AudioSource powerfulSource = null;
 
     public InputAction MovementAction { get; private set; }
     public InputAction RotationAction { get; private set; }
@@ -168,8 +169,8 @@ public class PlayerMovement : MonoBehaviour
 
             if (destructible)
             {
-                Destroy(Instantiate(hitEffect, hit.point, Quaternion.identity), 1f);
                 destructible.GetHitDamage();
+                Destroy(Instantiate(hitEffect, hit.point, Quaternion.identity), 1f);
             }
         }
     }
@@ -182,6 +183,8 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator PowerUpAttackLoop()
     {
         powerfulVFX.enabled = true;
+        powerfulSource.Play();
+
         float duration = 0f;
         float attackRate = 0.075f;
         float lastAttackTime = 0f;
@@ -210,6 +213,7 @@ public class PlayerMovement : MonoBehaviour
         attackOffset3 = 0.25f;
 
         powerfulVFX.enabled = false;
+        powerfulSource.Stop();
         inventory.Instance.SetFunnyObject(null);
         Animator.SetInteger("AttackIndex", 0);
     }

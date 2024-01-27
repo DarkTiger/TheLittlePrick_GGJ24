@@ -74,7 +74,7 @@ public class PrinceNpc : MonoBehaviour
                 AddFunnyScore(playerObject.GetComponent<PickableObject>().GetFunnyLevel());
 
                 //dopo
-
+                
                 inventory.Instance.SetMissionObject(null);
                 Destroy(playerObject);
                 
