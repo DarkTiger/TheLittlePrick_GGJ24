@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float rotationSpeed = 1f;
     [SerializeField] float jumpForce = 1f;
     [SerializeField] float mouseSpeed = 0.1f;
+    [SerializeField] float powerUpDuration = 10f;
     [SerializeField] GameObject hitEffect = null;
     [SerializeField] AudioClip[] attackWhooshClips;
     [SerializeField] AudioClip[] stepsClips;
@@ -22,7 +23,10 @@ public class PlayerMovement : MonoBehaviour
     public InputAction InteractAction { get; private set; }
     public InputAction AttackAction { get; private set; }
 
-    Animator animator;
+    public Animator Animator { get; private set; }
+
+    public static PlayerMovement Instance;
+
     SpriteRenderer spriteRenderer;
     PlayerInput playerInput;
     Rigidbody rb;
@@ -36,7 +40,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
+        Instance = this;
+
+        Animator = GetComponent<Animator>();
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -53,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
             if (isGrounded)
             {
                 rb.velocity += Vector3.up * jumpForce;
-                animator.SetTrigger("StartJump");
+                Animator.SetTrigger("StartJump");
 
                 AudioManager.instance.PlayAudioClip(jumpClips[Random.Range(0, jumpClips.Length)], transform.position);
             }
@@ -61,12 +67,12 @@ public class PlayerMovement : MonoBehaviour
 
         AttackAction.performed += (context) =>
         {
-            StartCoroutine(Attack(0.1f));   
+            Attack();   
         };
 
         OnGrounded += () =>
         {
-            animator.SetTrigger("EndJump");
+            Animator.SetTrigger("EndJump");
         };
     }
 
@@ -105,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
 
         bool running = Mathf.Abs(rb.velocity.x + rb.velocity.z) > 0.1f;
 
-        animator.SetBool("Running", running);
+        Animator.SetBool("Running", running);
 
         if (running && lastStepTime > 0.25f && isGrounded)
         {
@@ -127,14 +133,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private IEnumerator Attack(float damageDelay)
+    private void Attack()
     {
-        animator.SetTrigger("Attack");
+        Animator.SetTrigger("Attack");
+
         AudioManager.instance.PlayAudioClip(attackWhooshClips[Random.Range(0, attackWhooshClips.Length)], transform.position);
+    }
 
-        yield return new WaitForSeconds(damageDelay);
-
-        Ray ray1 = new Ray(transform.position + (Vector3.up * 0.3f) + (transform.forward * 0.15f), (transform.right * (spriteRenderer.flipX? -1f : 1f)));
+    public void AttackAnimEvent()
+    {
+        Ray ray1 = new Ray(transform.position + (Vector3.up * 0.3f) + (transform.forward * 0.15f), (transform.right * (spriteRenderer.flipX ? -1f : 1f)));
         Ray ray2 = new Ray(transform.position + (Vector3.up * 0.3f) + (transform.forward * 0.25f), (transform.right * (spriteRenderer.flipX ? -1f : 1f)));
 
         RaycastHit hit;
@@ -149,5 +157,33 @@ public class PlayerMovement : MonoBehaviour
                 destructible.GetHitDamage();
             }
         }
+    }
+
+    public void PlayPowerUpAttackLoop()
+    {
+        StartCoroutine(PowerUpAttackLoop());
+    }
+
+    IEnumerator PowerUpAttackLoop()
+    {
+        float duration = 0f;
+        float attackRate = 0.1f;
+        float lastAttackTime = 0f;
+
+        while (duration < powerUpDuration)
+        {
+            duration += Time.deltaTime;
+
+            if (lastAttackTime + attackRate < duration)
+            {
+                Attack();
+                lastAttackTime = duration;
+            }
+
+            yield return null;
+        }
+
+        inventory.Instance.SetFunnyObject(null);
+        Animator.SetInteger("AttackIndex", 0);
     }
 }

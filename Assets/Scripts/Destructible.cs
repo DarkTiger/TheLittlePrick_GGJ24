@@ -57,7 +57,11 @@ public class Destructible : MonoBehaviour
     {
         if (Random.Range(0f, 100f) <= Gamemanager.instance.MissionPickableDropsChance)
         {
-            Instantiate(Gamemanager.instance.GetRandomPickable().gameObject, transform.position + (Vector3.up * 0.5f), Quaternion.identity);
+            Instantiate(Gamemanager.instance.GetRandomPickable(pickableObjectType.Mission).gameObject, transform.position + (Vector3.up * 0.5f), Quaternion.identity);
+        }
+        else if (Random.Range(0f, 100f) <= Gamemanager.instance.PowerUpPickableDropsChance)
+        {
+            Instantiate(Gamemanager.instance.GetRandomPickable(pickableObjectType.PowerUp).gameObject, transform.position + (Vector3.up * 0.5f), Quaternion.identity);
         }
 
         AudioManager.instance.PlayAudioClip(destroyClips[Random.Range(0, destroyClips.Length)], transform.position);

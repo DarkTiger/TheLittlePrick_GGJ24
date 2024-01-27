@@ -180,27 +180,6 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: JesterCrowbar_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: adc530ffdb416554c9aa04cefffeca47
-      internalID: 204555660
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -216,7 +195,6 @@ TextureImporter:
       JesterCrowbar_1: 1282589149
       JesterCrowbar_2: -626811908
       JesterCrowbar_3: -476259869
-      JesterCrowbar_4: 204555660
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

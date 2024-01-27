@@ -6,7 +6,7 @@ using UnityEngine;
 public enum pickableObjectType
 {
     Mission,
-    Funny
+    PowerUp
 }
 
 public class PickableObject : Interactable
