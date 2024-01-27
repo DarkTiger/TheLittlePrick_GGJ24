@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLine: I think the prince finds the aladin's lamp entarteining.
   voiceClip: {fileID: 8300000, guid: 069632ce0d3676b4b81c5bab25da2647, type: 3}
+  dialogueLength: 0
+  portrait: {fileID: 176674933, guid: 4fe20b7dbff7bb749b11741fe14d5fde, type: 3}

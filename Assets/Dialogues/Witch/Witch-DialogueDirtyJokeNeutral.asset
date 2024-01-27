@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLine: I think the prince finds the dirty jokes entarteining.
   voiceClip: {fileID: 8300000, guid: c44bd006c033b5e479ead1913a35ff2e, type: 3}
+  dialogueLength: 0
+  portrait: {fileID: 1237232671, guid: 4fe20b7dbff7bb749b11741fe14d5fde, type: 3}

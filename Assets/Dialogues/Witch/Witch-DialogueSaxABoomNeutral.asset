@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLine: I think the prince finds the sax-a-boom entarteining.
   voiceClip: {fileID: 8300000, guid: 750eee310fd42074399eeae22a44c7aa, type: 3}
+  dialogueLength: 0
+  portrait: {fileID: 1237232671, guid: 4fe20b7dbff7bb749b11741fe14d5fde, type: 3}

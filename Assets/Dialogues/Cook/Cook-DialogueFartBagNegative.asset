@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLine: Do not play the Fart Bag in front of the Prince. He hates it!
   voiceClip: {fileID: 8300000, guid: 2b1c30de545da3f4d8b38816ecb6a52a, type: 3}
+  dialogueLength: 0
+  portrait: {fileID: 176674933, guid: 4fe20b7dbff7bb749b11741fe14d5fde, type: 3}

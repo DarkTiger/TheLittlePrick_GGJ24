@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLine: Do not play the saxaboom in front of the Prince. He hates it!
   voiceClip: {fileID: 8300000, guid: 7c26de7cbdb3bbc41812ed6d11e0728b, type: 3}
+  dialogueLength: 0
+  portrait: {fileID: 176674933, guid: 4fe20b7dbff7bb749b11741fe14d5fde, type: 3}

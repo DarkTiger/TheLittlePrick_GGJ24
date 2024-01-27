@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a1f544d00146643b33649e55622ed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2.5
+  movementSpeed: 3.5
   rotationSpeed: 1.25
   jumpForce: 7.5
   mouseSpeed: 0.25
@@ -228,6 +228,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a2611c3b2ef167a4aadfa32b9251e0c4, type: 3}
   powerfulVFX: {fileID: 51968510514862487}
   powerfulSource: {fileID: 926817926079435054}
+  musicMixer: {fileID: 0}
   InputEnabled: 1
 --- !u!212 &1517843998732235658
 SpriteRenderer:
@@ -588,7 +589,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 3bfc6eef637088b46a5d51e8361e907d, type: 3}
   m_Resource: {fileID: 8300000, guid: 3bfc6eef637088b46a5d51e8361e907d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.35
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0

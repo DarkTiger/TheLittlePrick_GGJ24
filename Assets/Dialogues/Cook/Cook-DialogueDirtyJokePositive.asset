@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLine: I know for sure that the Prince likes a lot yours Dirty Jokes.
   voiceClip: {fileID: 8300000, guid: 2df53cb92102aaf4cb3b37744b1e128a, type: 3}
+  dialogueLength: 0
+  portrait: {fileID: 176674933, guid: 4fe20b7dbff7bb749b11741fe14d5fde, type: 3}

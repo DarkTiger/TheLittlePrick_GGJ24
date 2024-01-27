@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLine: I know for sure that the Prince likes a lot your Sax-a-boom.
   voiceClip: {fileID: 8300000, guid: d3bce98ab9f3d0d49b81e52a89baf056, type: 3}
+  dialogueLength: 0
+  portrait: {fileID: 460082763, guid: 4fe20b7dbff7bb749b11741fe14d5fde, type: 3}

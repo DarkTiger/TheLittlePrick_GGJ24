@@ -1,7 +1,6 @@
-
 using System.Collections;
-using System.Linq;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 using UnityEngine.VFX;
 
@@ -18,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] AudioClip[] jumpClips;
     [SerializeField] VisualEffect powerfulVFX = null;
     [SerializeField] AudioSource powerfulSource = null;
+    [SerializeField] AudioMixer musicMixer = null;
+    AudioMixerGroup audioMixerGroup;
 
     public InputAction MovementAction { get; private set; }
     public InputAction RotationAction { get; private set; }

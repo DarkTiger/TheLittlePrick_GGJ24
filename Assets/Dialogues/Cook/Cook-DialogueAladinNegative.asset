@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLine: Do not play the aladin's lamp in front of the Prince. He hates it!
   voiceClip: {fileID: 8300000, guid: 35d459ae5fb89bf418ff6d86049f19a2, type: 3}
+  dialogueLength: 0
+  portrait: {fileID: 176674933, guid: 4fe20b7dbff7bb749b11741fe14d5fde, type: 3}

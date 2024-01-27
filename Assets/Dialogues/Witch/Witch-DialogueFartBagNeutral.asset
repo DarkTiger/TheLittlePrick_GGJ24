@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLine: I think the prince finds the fart bag entarteining.
   voiceClip: {fileID: 8300000, guid: a9d6ae1f060d4cb44adcd0b5ebf75403, type: 3}
+  dialogueLength: 0
+  portrait: {fileID: 1237232671, guid: 4fe20b7dbff7bb749b11741fe14d5fde, type: 3}

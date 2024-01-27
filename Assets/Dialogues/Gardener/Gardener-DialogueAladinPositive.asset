@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLine: I know for sure that the Prince likes a lot your Aladin's Lamp.
   voiceClip: {fileID: 8300000, guid: 3b18f571169a84d40b0cc7dae91ad3ac, type: 3}
+  dialogueLength: 0
+  portrait: {fileID: 460082763, guid: 4fe20b7dbff7bb749b11741fe14d5fde, type: 3}
