@@ -1960,26 +1960,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1742170798}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 526d2dea1afbcb04396b9e270e1d3527, type: 3}
+  m_Script: {fileID: 11500000, guid: c191b3658c3406c469940566bfdb61cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 1742170802}
-  aladin:
-  - {fileID: 8300000, guid: d01d5e3dbf0f3dc479d4c625bf39d741, type: 3}
-  - {fileID: 8300000, guid: 48c7ddd24ee900f4fa901b7810f3ba8c, type: 3}
-  - {fileID: 8300000, guid: c015b4a55fdbe004c9b9304e193af70b, type: 3}
-  - {fileID: 8300000, guid: 963d75c6cead49645b30e0383201c4f1, type: 3}
-  - {fileID: 8300000, guid: 0ac1943afd0299042a0bec59bf09a9e7, type: 3}
-  fart:
-  - {fileID: 8300000, guid: febe6e42cfc32524f8bb695df10ea2e4, type: 3}
-  sax:
-  - {fileID: 8300000, guid: e1c75786a4cd3034bb645f3988729063, type: 3}
-  - {fileID: 8300000, guid: 172e7516e8dbe634a9bdb82ee6da348d, type: 3}
-  - {fileID: 8300000, guid: ee267c1b5e0637543b18fbc9996ef134, type: 3}
-  dirty:
-  - {fileID: 8300000, guid: 02ff533fdf2cb864689e895df79460f5, type: 3}
-  - {fileID: 8300000, guid: 506a721c0f4064d4181e3fb74802096c, type: 3}
-  - {fileID: 8300000, guid: d0ae99452c8e899458e1e2c6143ccb87, type: 3}
+  jokesClip: {fileID: 0}
+  bagClip: {fileID: 0}
+  saxClip: {fileID: 0}
+  lampClip: {fileID: 0}
+  player: {fileID: 0}
+  UI: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!1 &1841157893
 GameObject:
   m_ObjectHideFlags: 0
