@@ -11,4 +11,6 @@ public class Dialogue : ScriptableObject
     public float dialogueLength;
     public Sprite portrait;
 
+
+
 }
