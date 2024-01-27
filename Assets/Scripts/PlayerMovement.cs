@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     public InputAction JumpAction { get; private set; }
     public InputAction InteractAction { get; private set; }
     public InputAction AttackAction { get; private set; }
-
+    public bool InputEnabled = true;
     public Animator Animator { get; private set; }
 
     public static PlayerMovement Instance;
@@ -62,6 +62,8 @@ public class PlayerMovement : MonoBehaviour
 
         JumpAction.performed += (context) => 
         {
+            if (!InputEnabled) return;
+
             if (isGrounded)
             {
                 rb.velocity += Vector3.up * jumpForce;
@@ -73,6 +75,8 @@ public class PlayerMovement : MonoBehaviour
 
         AttackAction.performed += (context) =>
         {
+            if (!InputEnabled) return;
+
             Attack();   
         };
 
@@ -86,21 +90,24 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new Vector3(rb.velocity.x * 0.5f * Time.deltaTime, rb.velocity.y, rb.velocity.z * 0.5f * Time.deltaTime);
 
-        Vector2 movementValue = MovementAction.ReadValue<Vector2>();
-        lastSpeedDir = movementValue.x;
-
-        if (movementValue.magnitude > 0.2f || movementValue.magnitude < -0.2f)
+        if (InputEnabled)
         {
-            float velocityY = rb.velocity.y;
-            rb.velocity = ((transform.forward * movementValue.y) + (transform.right * movementValue.x)) * movementSpeed;
-            rb.velocity = new Vector3(rb.velocity.x, velocityY, rb.velocity.z);
-        }
+            Vector2 movementValue = MovementAction.ReadValue<Vector2>();
+            lastSpeedDir = movementValue.x;
 
-        float rotationValue = RotationAction.ReadValue<Vector2>().x + (RotationMouseAction.ReadValue<Vector2>().x * mouseSpeed);
+            if (movementValue.magnitude > 0.2f || movementValue.magnitude < -0.2f)
+            {
+                float velocityY = rb.velocity.y;
+                rb.velocity = ((transform.forward * movementValue.y) + (transform.right * movementValue.x)) * movementSpeed;
+                rb.velocity = new Vector3(rb.velocity.x, velocityY, rb.velocity.z);
+            }
 
-        if (rotationValue > 0.2f || rotationValue < -0.2f)
-        {
-            rb.angularVelocity += Vector3.up * rotationValue * rotationSpeed;
+            float rotationValue = RotationAction.ReadValue<Vector2>().x + (RotationMouseAction.ReadValue<Vector2>().x * mouseSpeed);
+
+            if (rotationValue > 0.2f || rotationValue < -0.2f)
+            {
+                rb.angularVelocity += Vector3.up * rotationValue * rotationSpeed;
+            }
         }
 
         isGrounded = Physics.Raycast(new Ray(transform.position - (transform.up * -0.05f), -transform.up), 0.15f);
