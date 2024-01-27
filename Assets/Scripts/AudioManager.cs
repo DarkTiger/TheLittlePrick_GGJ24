@@ -38,9 +38,9 @@ public class AudioManager : MonoBehaviour
     /// Play effect audio
     /// </summary>
     /// <param name="clipToPlay"></param>
-    public void PlayAudioClip(AudioClip clipToPlay)
+    public void PlayAudioClip(AudioClip clipToPlay, Vector3 position)
     {
-        GameObject tempAudioClip=Instantiate(audioSourcePrefab);
+        GameObject tempAudioClip=Instantiate(audioSourcePrefab, position, Quaternion.identity);
 
         tempAudioClip.GetComponent<AudioSource>().clip = clipToPlay;
 
