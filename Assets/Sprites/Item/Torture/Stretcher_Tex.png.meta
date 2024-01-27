@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: 149d2fc146ebac641a25dadceb4cf7e9
+guid: dc1a71d3734390e4b80f5427c304dd65
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -37,8 +37,8 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
+    wrapU: 0
+    wrapV: 0
     wrapW: 0
   nPOTScale: 0
   lightmap: 0
@@ -52,13 +52,13 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 1
+  alphaIsTransparency: 0
   spriteTessellationDetail: -1
-  textureType: 8
-  textureShape: 1
+  textureType: 0
+  textureShape: 4
   singleChannelComponent: 0
   flipbookRows: 1
-  flipbookColumns: 1
+  flipbookColumns: 5
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pots_0
+      name: Stretcher_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 483c4666cab746a46a94177c57904784
-      internalID: -128409485
+      spriteID: c37e0ffe472cdc14692e5f92b7926645
+      internalID: -978150579
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pots_1
+      name: Stretcher_1
       rect:
         serializedVersion: 2
         x: 64
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60d7750192b4bd94692de46475a7e6aa
-      internalID: 1428097438
+      spriteID: b48374bfc36de9745bed0bcbf4794084
+      internalID: -1045469387
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pots_2
+      name: Stretcher_2
       rect:
         serializedVersion: 2
         x: 128
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4aea0341238ea0f4890f175c1df3e3fe
-      internalID: 1757582319
+      spriteID: 704f86c0b96533844970eb99c5220530
+      internalID: -1840220520
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pots_3
+      name: Stretcher_3
       rect:
         serializedVersion: 2
         x: 192
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a1944493129f964ab6c8b43543a0e56
-      internalID: -1646395275
+      spriteID: ef6700697c43ff74bbc12cb8878f0d87
+      internalID: 323370726
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pots_4
+      name: Stretcher_4
       rect:
         serializedVersion: 2
         x: 256
@@ -195,8 +195,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21c4fbc1496dea4468c7d6c175e60c7e
-      internalID: 1209407799
+      spriteID: fee1830ccc0d44a428aa14653349ad5c
+      internalID: 1671031710
       vertices: []
       indices: 
       edges: []
@@ -204,7 +204,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 63bcbcbe120da4548965bf2adcda17a2
+    spriteID: f4d38bc16c78e98429838d942400f3b7
     internalID: 0
     vertices: []
     indices: 
@@ -212,11 +212,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Pots_0: -128409485
-      Pots_1: 1428097438
-      Pots_2: 1757582319
-      Pots_3: -1646395275
-      Pots_4: 1209407799
+      Stretcher_0: -978150579
+      Stretcher_1: -1045469387
+      Stretcher_2: -1840220520
+      Stretcher_3: 323370726
+      Stretcher_4: 1671031710
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
