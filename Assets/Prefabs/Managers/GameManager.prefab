@@ -50,7 +50,9 @@ MonoBehaviour:
   - {fileID: 8665887926803393204, guid: bc470ef2e0a4cd848af086b587bfd4e1, type: 3}
   - {fileID: 4802968900510232881, guid: 616dcb23509d65446bc5f85f07358d87, type: 3}
   - {fileID: 5118949499954558945, guid: edf23def59751e1418ddef41a0055a9d, type: 3}
+  powerUpItems: []
   maxTime: 600
   maxMissionPickableDrops: 4
   funnyLevelsObjectRateRandomize: 280000001e0000000a000000f6ffffff
-  MissionPickableDropsChance: 0.5
+  MissionPickableDropsChance: 100
+  PowerUpPickableDropsChance: 1

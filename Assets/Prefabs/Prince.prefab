@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1363123038381119290
 Transform:
   m_ObjectHideFlags: 0
@@ -82,7 +82,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80
@@ -181,6 +181,7 @@ MonoBehaviour:
   lampClip: {fileID: 0}
   player: {fileID: 0}
   UI: {fileID: 0}
+  animator: {fileID: 4556005940619776394}
 --- !u!1 &2206294261900669092
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,7 +263,7 @@ GameObject:
   - component: {fileID: 6429552861841469762}
   m_Layer: 0
   m_Name: AnimationCamera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -318,7 +319,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -525,7 +526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   increasePerSecond: 3
   funnyBarSlider: {fileID: 0}
-  jesterJokes: {fileID: 1429879254276416996}
+  jesterJokes: {fileID: 5714515783518890461}
 --- !u!135 &303574530618587383
 SphereCollider:
   m_ObjectHideFlags: 0
