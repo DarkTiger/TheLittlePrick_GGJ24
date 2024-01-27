@@ -12049,6 +12049,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 02ff533fdf2cb864689e895df79460f5, type: 3}
   - {fileID: 8300000, guid: 506a721c0f4064d4181e3fb74802096c, type: 3}
   - {fileID: 8300000, guid: d0ae99452c8e899458e1e2c6143ccb87, type: 3}
+  gameOver:
+  - {fileID: 0}
 --- !u!114 &1657533262 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5714515783518890461, guid: 3e8a8442354ce214d92a23f927ae9cdf,
