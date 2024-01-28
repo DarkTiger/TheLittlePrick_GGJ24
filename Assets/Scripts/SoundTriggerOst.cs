@@ -40,11 +40,10 @@ public class SoundTriggerOst : MonoBehaviour
 
         GameObject activeOst= AudioManager.instance.GetActiveOst();
 
-        activeOst.GetComponent<BoxCollider>().enabled = true;
-        activeOst.GetComponent <AudioSource>().Stop();
-        
-
-        
-        
+        if (activeOst)
+        {
+            activeOst.GetComponent<BoxCollider>().enabled = true;
+            activeOst.GetComponent<AudioSource>().Stop();
+        }
     }
 }

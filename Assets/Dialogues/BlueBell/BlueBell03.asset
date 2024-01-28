@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc97d885716b4b94c8bffc727d1b4e0e, type: 3}
   m_Name: BlueBell03
   m_EditorClassIdentifier: 
-  dialogueLine: With luck, cracking a joke will crack his royal demeanor!
-  voiceClip: {fileID: 8300000, guid: 38b14774e9358d54ba576959433d5cf4, type: 3}
+  dialogueLine: The little prick doesn't like all of the the jokes! And I can carry
+    only 1 at time!
+  voiceClip: {fileID: 8300000, guid: de0cbcbe98f75d5469cc964032e25447, type: 3}
   dialogueLength: 4.5
   portrait: {fileID: 1906015544, guid: 09f89dbe32f89444e9236b857b47b7f4, type: 3}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc97d885716b4b94c8bffc727d1b4e0e, type: 3}
   m_Name: BlueBell01
   m_EditorClassIdentifier: 
-  dialogueLine: Oh no! My finest jests are scattered somewhere within the castle.
-  voiceClip: {fileID: 8300000, guid: e73fbf07bfdaebc48ac8883cf14222ee, type: 3}
+  dialogueLine: I must find my best 4 jokes and bring them back in front of his majesty.
+  voiceClip: {fileID: 8300000, guid: dd96d5702b62560499684bf6b3397140, type: 3}
   dialogueLength: 5
   portrait: {fileID: 1906015544, guid: 09f89dbe32f89444e9236b857b47b7f4, type: 3}

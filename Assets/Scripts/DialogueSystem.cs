@@ -27,6 +27,7 @@ public class DialogueSystem : MonoBehaviour
     public List<Dialogue> cookList = new List<Dialogue>();
     public List<Dialogue> witchList = new List<Dialogue>();
     private List<Dialogue> currentSequence = new List<Dialogue>();
+    public GameObject Canvas;
 
 
     //public void Start()
@@ -101,6 +102,7 @@ public class DialogueSystem : MonoBehaviour
     {
         isPlayingDialogue = false;
         dialogueCanvas.SetActive(false);
+
     }
 
     public void PlaySequence(List<Dialogue> sequence)
@@ -157,6 +159,8 @@ public class DialogueSystem : MonoBehaviour
         isDialogueSequence = false;
         voiceSource.Stop();
         dialogueCanvas.SetActive(false);
+        Canvas.SetActive(true);
+        PlayerMovement.Instance.InputEnabled = true;
 
     }
 
