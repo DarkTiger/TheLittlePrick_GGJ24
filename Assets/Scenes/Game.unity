@@ -58451,27 +58451,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!135 &1558875583356312351
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2206294263473996782}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 8
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1560998471690525724
 GameObject:
   m_ObjectHideFlags: 0
@@ -60038,7 +60017,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2742609643581486156}
-  - component: {fileID: 1558875583356312351}
+  - component: {fileID: 5423449508677690437}
   - component: {fileID: 5423449508677690436}
   m_Layer: 0
   m_Name: GameObject
@@ -61255,8 +61234,8 @@ Transform:
   m_GameObject: {fileID: 2206294263473996782}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.382, z: -4.033}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 4.12, z: -0.26}
+  m_LocalScale: {x: 28.7, y: 8.0114, z: 9.651563}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -69751,6 +69730,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LaughBar: {fileID: 755324806}
+--- !u!65 &5423449508677690437
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2206294263473996782}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &5428159393314838333
 MeshFilter:
   m_ObjectHideFlags: 0
