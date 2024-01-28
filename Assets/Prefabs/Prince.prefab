@@ -215,7 +215,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 506a721c0f4064d4181e3fb74802096c, type: 3}
   - {fileID: 8300000, guid: d0ae99452c8e899458e1e2c6143ccb87, type: 3}
   gameOver:
-  - {fileID: 8300000, guid: c3c1bee1d86a2434584c03a31685faf0, type: 3}
+  - {fileID: 8300000, guid: babdf10eb5d051a4b8d9f26ddc02be32, type: 3}
 --- !u!82 &4416723687012142833
 AudioSource:
   m_ObjectHideFlags: 0
