@@ -7,7 +7,10 @@ public class Billboard : MonoBehaviour
 
     void Update()
     {
-
-        transform.LookAt(Camera.main.transform.position);
+        if (Gamemanager.instance.billBoardEnabled == true)
+        {
+            transform.LookAt(Camera.main.transform.position);
+        }
+        
     }
 }

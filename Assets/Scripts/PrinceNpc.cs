@@ -16,6 +16,12 @@ public class PrinceNpc : MonoBehaviour
 
     [SerializeField] JesterJokes jesterJokes;
 
+    private SpriteRenderer spriteRenderer;
+
+    [SerializeField] Transform ExectionPoint;
+
+    private Animator animator;
+
     private void Start()
     {
         funnyLevel = Gamemanager.instance.FunnyScore;
@@ -23,6 +29,10 @@ public class PrinceNpc : MonoBehaviour
         funnyBarSlider.value = currentLevel;
 
         Gamemanager.instance.onFunnyScoreChanged += SetFunnyLevel;
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        animator=GetComponent<Animator>();
     }
     public void AddFunnyLevel(int value)
     {
@@ -78,6 +88,12 @@ public class PrinceNpc : MonoBehaviour
 
                 jesterJokes.StartJokesAnimation(playerObject.GetComponent<PickableObject>().GetMissionType());
 
+                gameObject.transform.eulerAngles = new Vector3(
+    0,
+       180,
+    0
+);
+
                 jesterJokes.StartEvent();
 
                 AddFunnyScore(playerObject.GetComponent<PickableObject>().GetFunnyLevel());
@@ -89,5 +105,31 @@ public class PrinceNpc : MonoBehaviour
                 
             }
         }
+    }
+
+    public void DisablePrince()
+    {
+        spriteRenderer.enabled = false;
+    }
+
+    public void SetExecutionPoint()
+    {
+        transform.position = ExectionPoint.position;
+
+        gameObject.transform.eulerAngles = new Vector3(
+    0,
+       180,
+    0);
+    }
+
+    public void PrinceLaugh()
+    {
+        jesterJokes.StartEvent();
+        animator.SetTrigger("Laugh");
+    }
+
+    public void DisableJesterSprite()
+    {
+        jesterJokes.gameObject.GetComponent<SpriteRenderer>().enabled=false;
     }
 }

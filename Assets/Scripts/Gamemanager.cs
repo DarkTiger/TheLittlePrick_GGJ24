@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.UIElements;
 
 public class Gamemanager : MonoBehaviour
 {
     public static Gamemanager instance;
 
-    
+    [SerializeField] int funnyScoreToWin = 75;
     [SerializeField] UiInventory uiInventory;
     [SerializeField] List<PickableObject> missionItems;
     [SerializeField] List<PickableObject> powerUpItems;
@@ -20,6 +21,20 @@ public class Gamemanager : MonoBehaviour
 
     public float MissionPickableDropsChance = 0.5f;
     public float PowerUpPickableDropsChance = 1f;
+
+    [SerializeField] JesterJokes jesterEvent;
+
+    public Camera mainCamera1;
+    public Camera mainCamera2;
+
+    public bool billBoardEnabled = true;
+
+    public bool timerStopped=false;
+
+    [SerializeField] PlayableDirector WinDirector;
+    [SerializeField] PlayableDirector LoseDirector;
+
+    bool win = false;
 
 
     float _funnyScore = 0;
@@ -68,7 +83,17 @@ public class Gamemanager : MonoBehaviour
     {
         uiTimerRemaining -= Time.deltaTime;
 
-        uiInventory.SetUiTimer(convertTime(uiTimerRemaining));
+        if (!timerStopped)
+        {
+            uiInventory.SetUiTimer(convertTime(uiTimerRemaining));
+        }
+        
+
+        if(uiTimerRemaining <0 ) 
+        {
+            
+            LoseDirector.Play();
+        }
 
         
     }
@@ -78,6 +103,11 @@ public class Gamemanager : MonoBehaviour
         float minutes=time/60;
         float seconds=time%60;
 
+        if (time <= 0)
+        {
+            return ($"0:00");
+        }
+
         if (seconds < 10)
         {
             return ($"{(int)minutes}:0{(int)seconds}");
@@ -86,6 +116,8 @@ public class Gamemanager : MonoBehaviour
         {
             return ($"{(int)minutes}:{(int)seconds}");
         }
+
+        
     }
 
     public PickableObject GetRandomPickable(pickableObjectType type)
@@ -125,6 +157,33 @@ public class Gamemanager : MonoBehaviour
 
         funnyRatioObjectSequence.Sort((x,y)=>y.GetFunnyLevel().CompareTo(x.GetFunnyLevel()));
     }
+
+    public void DisableBilbordEvent()
+    {
+        billBoardEnabled = false;
+    }
+
+    public void StopTime()
+    {
+        Time.timeScale = 0;
+    }
+
+    public bool checkForWin()
+    {
+        if (FunnyScore > 75 && !win)
+        {
+            win = true;
+            jesterEvent.gameObject.SetActive(true);
+            jesterEvent.StartEvent();
+            jesterEvent.WinEvent();
+
+            return true;
+        }
+
+        return false;
+    }
+
+    
 
     
 

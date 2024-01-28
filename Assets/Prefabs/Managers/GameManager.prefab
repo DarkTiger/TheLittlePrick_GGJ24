@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3594622571420692600}
   - component: {fileID: 5508481985740870019}
+  - component: {fileID: 3474857315419815507}
+  - component: {fileID: 249279977888956400}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -44,16 +46,83 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fa3c9d8583674d4998e6c7af9049a11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  funnyScoreToWin: 75
   uiInventory: {fileID: 0}
   missionItems:
   - {fileID: 6957285283910809973, guid: 27e4e5e187f80c84d994c6b4ff9297ff, type: 3}
   - {fileID: 8665887926803393204, guid: bc470ef2e0a4cd848af086b587bfd4e1, type: 3}
   - {fileID: 4802968900510232881, guid: 616dcb23509d65446bc5f85f07358d87, type: 3}
   - {fileID: 5118949499954558945, guid: edf23def59751e1418ddef41a0055a9d, type: 3}
-  powerUpItems:
-  - {fileID: 2417076974920026909, guid: e46f0d15cbbf0424b9575e9c327c4d28, type: 3}
+  powerUpItems: []
   maxTime: 600
   maxMissionPickableDrops: 4
-  funnyLevelsObjectRateRandomize: 280000001e0000000a000000f6ffffff
-  MissionPickableDropsChance: 0.5
-  PowerUpPickableDropsChance: 2.5
+  funnyLevelsObjectRateRandomize: 2d000000190000002300000000000000
+  MissionPickableDropsChance: 100
+  PowerUpPickableDropsChance: 1
+  jesterEvent: {fileID: 0}
+  mainCamera1: {fileID: 0}
+  mainCamera2: {fileID: 0}
+  billBoardEnabled: 1
+  timerStopped: 0
+  WinDirector: {fileID: 0}
+  LoseDirector: {fileID: 0}
+--- !u!114 &3474857315419815507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965970385563753464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: c87c9eb37dc223c44b7dbbd178bb2a99, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5508481985740870019}
+          m_TargetAssemblyTypeName: Gamemanager, Assembly-CSharp
+          m_MethodName: DisableBilbordEvent
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &249279977888956400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965970385563753464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 1fee37878d2077946b65a1f5e43382e9, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5508481985740870019}
+          m_TargetAssemblyTypeName: Gamemanager, Assembly-CSharp
+          m_MethodName: StopTime
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
