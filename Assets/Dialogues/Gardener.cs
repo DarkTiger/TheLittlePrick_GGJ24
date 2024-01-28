@@ -51,6 +51,7 @@ public class Gardener : MonoBehaviour
     void Start()
     {
         dialogueSystem = FindObjectOfType<DialogueSystem>();
+
     }
 
   

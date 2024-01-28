@@ -19021,7 +19021,7 @@ PrefabInstance:
     - target: {fileID: 5508481985740870019, guid: e0ebe168918b53b41b049f2bd66b6898,
         type: 3}
       propertyPath: maxTime
-      value: 361
+      value: 481
       objectReference: {fileID: 0}
     - target: {fileID: 5508481985740870019, guid: e0ebe168918b53b41b049f2bd66b6898,
         type: 3}
@@ -19071,7 +19071,7 @@ PrefabInstance:
     - target: {fileID: 5508481985740870019, guid: e0ebe168918b53b41b049f2bd66b6898,
         type: 3}
       propertyPath: MissionPickableDropsChance
-      value: 1.25
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5508481985740870019, guid: e0ebe168918b53b41b049f2bd66b6898,
         type: 3}

@@ -47,6 +47,8 @@ public class Latrina : MonoBehaviour
     void Start()
     {
         dialogueSystem = FindObjectOfType<DialogueSystem>();
+
+
     }
 
 }

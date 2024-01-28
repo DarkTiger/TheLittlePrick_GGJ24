@@ -77,6 +77,8 @@ public class Gamemanager : MonoBehaviour
 
     private void Start()
     {
+        Random.seed = Random.Range(int.MinValue, int.MaxValue);
+
         uiTimerRemaining = maxTime;
 
         funnyRatioObjectSequence= new List<PickableObject> ();
