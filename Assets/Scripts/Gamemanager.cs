@@ -9,7 +9,7 @@ public class Gamemanager : MonoBehaviour
 {
     public static Gamemanager instance;
 
-    
+    [SerializeField] int funnyScoreToWin = 75;
     [SerializeField] UiInventory uiInventory;
     [SerializeField] List<PickableObject> missionItems;
     [SerializeField] List<PickableObject> powerUpItems;
@@ -33,6 +33,8 @@ public class Gamemanager : MonoBehaviour
 
     [SerializeField] PlayableDirector WinDirector;
     [SerializeField] PlayableDirector LoseDirector;
+
+    bool win = false;
 
 
     float _funnyScore = 0;
@@ -164,6 +166,21 @@ public class Gamemanager : MonoBehaviour
     public void StopTime()
     {
         Time.timeScale = 0;
+    }
+
+    public bool checkForWin()
+    {
+        if (FunnyScore > 75 && !win)
+        {
+            win = true;
+            jesterEvent.gameObject.SetActive(true);
+            jesterEvent.StartEvent();
+            jesterEvent.WinEvent();
+
+            return true;
+        }
+
+        return false;
     }
 
     

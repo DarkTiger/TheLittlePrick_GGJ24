@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5975476848938296346}
   - component: {fileID: 4416723687012142833}
   - component: {fileID: 6605728127014416313}
+  - component: {fileID: 2380631686285942674}
   m_Layer: 3
   m_Name: JesterEvent
   m_TagString: Untagged
@@ -343,6 +344,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &2380631686285942674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429879254276416996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4913180ed41f2f42954a10565a59d88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2206294261900669092
 GameObject:
   m_ObjectHideFlags: 0

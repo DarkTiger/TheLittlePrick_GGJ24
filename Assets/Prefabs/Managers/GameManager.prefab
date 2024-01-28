@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fa3c9d8583674d4998e6c7af9049a11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  funnyScoreToWin: 75
   uiInventory: {fileID: 0}
   missionItems:
   - {fileID: 6957285283910809973, guid: 27e4e5e187f80c84d994c6b4ff9297ff, type: 3}
@@ -53,9 +54,9 @@ MonoBehaviour:
   - {fileID: 4802968900510232881, guid: 616dcb23509d65446bc5f85f07358d87, type: 3}
   - {fileID: 5118949499954558945, guid: edf23def59751e1418ddef41a0055a9d, type: 3}
   powerUpItems: []
-  maxTime: 5
+  maxTime: 600
   maxMissionPickableDrops: 4
-  funnyLevelsObjectRateRandomize: 280000001e0000000a000000f6ffffff
+  funnyLevelsObjectRateRandomize: 2d000000190000002300000000000000
   MissionPickableDropsChance: 100
   PowerUpPickableDropsChance: 1
   jesterEvent: {fileID: 0}

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class JesterJokes : MonoBehaviour
@@ -17,7 +18,14 @@ public class JesterJokes : MonoBehaviour
 
     [SerializeField] Animator animator;
 
-    
+    private PrinceNpc prince;
+
+    private void Start()
+    {
+        prince=GetComponentInParent<PrinceNpc>();
+    }
+
+
 
     public void StartJokesAnimation(MissionObjectEventType jokeObject)
     {
@@ -56,16 +64,32 @@ public class JesterJokes : MonoBehaviour
         Gamemanager.instance.timerStopped = false;
         player.SetActive(true);
         UI.SetActive(true);
+
+        if (CheckWinEvent())
+        {
+            StartEvent();
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
         
-        gameObject.SetActive(false);
+        
 
         
+    }
+
+    public bool CheckWinEvent()
+    {
+        return Gamemanager.instance.checkForWin();
     }
 
     public void WinEvent()
     {
-        animator.SetTrigger("Win");
+        prince.PrinceLaugh();
     }
+
+    
 
     public void LoseEvent()
     {
