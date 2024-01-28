@@ -102,6 +102,7 @@ public class DialogueSystem : MonoBehaviour
     {
         isPlayingDialogue = false;
         dialogueCanvas.SetActive(false);
+        Gamemanager.instance.timerStopped = false;
 
     }
 
@@ -161,6 +162,7 @@ public class DialogueSystem : MonoBehaviour
         dialogueCanvas.SetActive(false);
         Canvas.SetActive(true);
         PlayerMovement.Instance.InputEnabled = true;
+        Gamemanager.instance.timerStopped = false;
 
     }
 

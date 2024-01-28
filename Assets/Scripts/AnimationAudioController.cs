@@ -47,6 +47,12 @@ public class AnimationAudioController : MonoBehaviour
         if (contaDirty > dirty.Count - 1) contaDirty = 0;
     }
 
+    public void StopSound()
+    {
+        audioSource.Stop();
+        audioSource.clip = null;
+    }
+
     public void PlayGameOver()
     {
         audioSource.clip = gameOver[contaGameOver];

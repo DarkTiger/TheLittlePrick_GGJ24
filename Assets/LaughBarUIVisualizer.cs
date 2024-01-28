@@ -9,7 +9,7 @@ public class LaughBarUIVisualizer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.GetComponent<PlayerMovement>() != null)
+        if(other.gameObject.GetComponent<inventory>() != null)
         {
             LaughBar.SetActive(true);
         }
@@ -17,7 +17,7 @@ public class LaughBarUIVisualizer : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.GetComponent<PlayerMovement>() != null)
+        if (other.gameObject.GetComponent<inventory>() != null)
         {
             LaughBar.SetActive(false);
         }

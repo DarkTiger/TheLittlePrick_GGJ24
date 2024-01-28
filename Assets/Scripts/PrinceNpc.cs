@@ -22,6 +22,8 @@ public class PrinceNpc : MonoBehaviour
 
     private Animator animator;
 
+    [SerializeField] AudioClip audioWin;
+
     private void Start()
     {
         funnyLevel = Gamemanager.instance.FunnyScore;
@@ -33,6 +35,8 @@ public class PrinceNpc : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         animator=GetComponent<Animator>();
+
+        
     }
     public void AddFunnyLevel(int value)
     {
@@ -126,10 +130,19 @@ public class PrinceNpc : MonoBehaviour
     {
         jesterJokes.StartEvent();
         animator.SetTrigger("Laugh");
+
+        AudioManager.instance.PlayAudioClip(audioWin,transform.position);
+        
+
     }
 
     public void DisableJesterSprite()
     {
         jesterJokes.gameObject.GetComponent<SpriteRenderer>().enabled=false;
+    }
+
+    public void ResetScene()
+    {
+        Gamemanager.instance.ReloadGame();
     }
 }

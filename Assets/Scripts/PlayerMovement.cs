@@ -48,7 +48,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
 
         Animator = GetComponent<Animator>();
         playerInput = GetComponent<PlayerInput>();
@@ -217,5 +220,13 @@ public class PlayerMovement : MonoBehaviour
         powerfulSource.Stop();
         inventory.Instance.SetFunnyObject(null);
         Animator.SetInteger("AttackIndex", 0);
+    }
+
+    private void OnDestroy()
+    {
+        Debug.Log("destroy");
+
+        JumpAction.Dispose();
+        AttackAction.Dispose();
     }
 }

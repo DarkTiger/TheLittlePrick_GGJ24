@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class Gamemanager : MonoBehaviour
@@ -29,7 +30,7 @@ public class Gamemanager : MonoBehaviour
 
     public bool billBoardEnabled = true;
 
-    public bool timerStopped=false;
+    public bool timerStopped=true;
 
     [SerializeField] PlayableDirector WinDirector;
     [SerializeField] PlayableDirector LoseDirector;
@@ -81,10 +82,11 @@ public class Gamemanager : MonoBehaviour
 
     private void Update()
     {
-        uiTimerRemaining -= Time.deltaTime;
+       
 
         if (!timerStopped)
         {
+            uiTimerRemaining -= Time.deltaTime;
             uiInventory.SetUiTimer(convertTime(uiTimerRemaining));
         }
         
@@ -181,6 +183,12 @@ public class Gamemanager : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void ReloadGame()
+    {
+        SceneManager.LoadScene(0);
+        UnityEngine.Cursor.visible = true;
     }
 
     
