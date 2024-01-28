@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc97d885716b4b94c8bffc727d1b4e0e, type: 3}
   m_Name: Prince04
   m_EditorClassIdentifier: 
-  dialogueLine: You've got a mere 10 minutes to conjure up something genuinely amusing!
+  dialogueLine: You've only a few minutes to summon something genuinely amusing!
   voiceClip: {fileID: 8300000, guid: f4107282751fe404a93bdf91d1942df3, type: 3}
   dialogueLength: 5.8
   portrait: {fileID: 358716940, guid: 09f89dbe32f89444e9236b857b47b7f4, type: 3}

@@ -57,7 +57,12 @@ public class Destructible : MonoBehaviour
     {
         if (Random.Range(0f, 100f) <= Gamemanager.instance.MissionPickableDropsChance)
         {
-            Instantiate(Gamemanager.instance.GetRandomPickable(pickableObjectType.Mission).gameObject, transform.position + (Vector3.up * 0.5f), Quaternion.identity);
+            GameObject pickableObject = Gamemanager.instance.GetRandomPickable(pickableObjectType.Mission).gameObject;
+
+            if (pickableObject != null)
+            {
+                Instantiate(pickableObject, transform.position + (Vector3.up * 0.5f), Quaternion.identity);
+            }
         }
         else if (Random.Range(0f, 100f) <= Gamemanager.instance.PowerUpPickableDropsChance)
         {

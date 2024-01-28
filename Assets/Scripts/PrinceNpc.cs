@@ -24,6 +24,8 @@ public class PrinceNpc : MonoBehaviour
 
     [SerializeField] AudioClip audioWin;
 
+    [SerializeField] GameObject winCanvas;
+
     private void Start()
     {
         funnyLevel = Gamemanager.instance.FunnyScore;
@@ -90,7 +92,7 @@ public class PrinceNpc : MonoBehaviour
                 jesterJokes.gameObject.SetActive(true);
                 Debug.Log(jesterJokes.gameObject);
 
-                jesterJokes.StartJokesAnimation(playerObject.GetComponent<PickableObject>().GetMissionType());
+                jesterJokes.StartJokesAnimation(playerObject.GetComponent<MissionObjectType>().EventType());
 
                 gameObject.transform.eulerAngles = new Vector3(
     0,
@@ -144,5 +146,10 @@ public class PrinceNpc : MonoBehaviour
     public void ResetScene()
     {
         Gamemanager.instance.ReloadGame();
+    }
+
+    public void playCongratulation()
+    {
+        winCanvas.SetActive(true);
     }
 }

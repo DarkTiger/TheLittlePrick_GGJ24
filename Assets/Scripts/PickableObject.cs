@@ -21,10 +21,8 @@ public class PickableObject : Interactable
 
     private void Start()
     {
-        if(objectType == pickableObjectType.Mission)
-        {
-            missionType=GetComponent<MissionObjectType>();
-        }
+       
+        Debug.Log(objectType);
     }
 
 

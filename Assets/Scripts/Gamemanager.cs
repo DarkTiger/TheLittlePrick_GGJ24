@@ -13,12 +13,18 @@ public class Gamemanager : MonoBehaviour
     [SerializeField] int funnyScoreToWin = 75;
     [SerializeField] UiInventory uiInventory;
     [SerializeField] List<PickableObject> missionItems;
+
+    [SerializeField] List<PickableObject> missionItemDuplo;
     [SerializeField] List<PickableObject> powerUpItems;
     [SerializeField] float maxTime;
     [SerializeField] int maxMissionPickableDrops;
     [SerializeField] List<int> funnyLevelsObjectRateRandomize;
 
+    [SerializeField] List<PickableObject> oggettiDialoghi;
+      
     private List<PickableObject> funnyRatioObjectSequence;
+
+    [SerializeField] List<GameObject> dialogueNpc;
 
     public float MissionPickableDropsChance = 0.5f;
     public float PowerUpPickableDropsChance = 1f;
@@ -75,6 +81,8 @@ public class Gamemanager : MonoBehaviour
 
         funnyRatioObjectSequence= new List<PickableObject> ();
 
+        funnyRatioObjectSequence = missionItems.ToList ();
+
         SetFunnyLevel();
 
 
@@ -126,13 +134,17 @@ public class Gamemanager : MonoBehaviour
     {
         PickableObject pickable = null;
 
-        if (type == pickableObjectType.Mission)
+        if (type == pickableObjectType.Mission && maxMissionPickableDrops > 0)
         {
-            if (maxMissionPickableDrops <= 0) return null;
+            //if (maxMissionPickableDrops <= 0) return null;
 
             pickable = missionItems[Random.Range(0, missionItems.Count)];
-            missionItems.Remove(pickable);
-            maxMissionPickableDrops--;
+
+            if (pickable != null)
+            {
+                missionItems.Remove(pickable);
+                maxMissionPickableDrops--;
+            }
         }
         else
         {
@@ -155,9 +167,42 @@ public class Gamemanager : MonoBehaviour
             pickable.SetFunnyLevel(value);
         }
 
-        funnyRatioObjectSequence = missionItems.ToList();
+        
 
         funnyRatioObjectSequence.Sort((x,y)=>y.GetFunnyLevel().CompareTo(x.GetFunnyLevel()));
+
+        oggettiDialoghi=funnyRatioObjectSequence.ToList();
+        oggettiDialoghi.RemoveAt(Random.Range(1, oggettiDialoghi.Count));
+
+        foreach(GameObject g in dialogueNpc)
+        {
+
+            int randomposition = Random.Range(0, oggettiDialoghi.Count);
+
+            if (g.GetComponent<Gardener>() != null)
+            {
+                g.GetComponent<Gardener>().item = oggettiDialoghi[randomposition];
+                oggettiDialoghi.RemoveAt(randomposition);
+
+
+            }
+            else if(g.GetComponent<Cook>() != null)
+            {
+                g.GetComponent<Cook>().item = oggettiDialoghi[randomposition];
+                oggettiDialoghi.RemoveAt(randomposition);
+            }
+            else if(g.GetComponent<Latrina>() != null)
+            {
+                g.GetComponent<Latrina>().item = oggettiDialoghi[randomposition];
+                oggettiDialoghi.RemoveAt(randomposition);
+            }
+            else
+            {
+                Debug.LogError("sbagliato inserimento dialogo");
+            }
+
+
+        }
     }
 
     public void DisableBilbordEvent()
@@ -190,6 +235,13 @@ public class Gamemanager : MonoBehaviour
         SceneManager.LoadScene(0);
         UnityEngine.Cursor.visible = true;
     }
+
+    public List<PickableObject> GetFunnyOrderList()
+    {
+        return funnyRatioObjectSequence;
+    }
+
+    
 
     
 

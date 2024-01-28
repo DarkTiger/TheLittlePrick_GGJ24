@@ -15,5 +15,5 @@ MonoBehaviour:
   dialogueLine: I don't remember where I put them, I must kick everything until I
     find them!
   voiceClip: {fileID: 8300000, guid: f146785f8f159f840b560d48f0335822, type: 3}
-  dialogueLength: 4.5
+  dialogueLength: 5.5
   portrait: {fileID: 1906015544, guid: 09f89dbe32f89444e9236b857b47b7f4, type: 3}

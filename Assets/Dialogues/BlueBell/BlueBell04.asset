@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLine: Better to ask around for recommendations!
   voiceClip: {fileID: 8300000, guid: a234b8d4585a904468aff3a402fa6d46, type: 3}
-  dialogueLength: 4.5
+  dialogueLength: 3
   portrait: {fileID: 1906015544, guid: 09f89dbe32f89444e9236b857b47b7f4, type: 3}

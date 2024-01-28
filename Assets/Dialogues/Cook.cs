@@ -5,12 +5,35 @@ using UnityEngine;
 public class Cook : MonoBehaviour
 {
     public DialogueSystem dialogueSystem;
-    public int item;
+    public PickableObject item;
+
+    private funnyLevelType funnyType;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<inventory>())
-        dialogueSystem.PlayDialogue(dialogueSystem.cookList, item);
+        {
+            List<PickableObject> list = Gamemanager.instance.GetFunnyOrderList();
+
+            foreach (PickableObject p in list)
+            {
+                if (item == list[0])
+                {
+                    funnyType = funnyLevelType.neg;
+                }
+                else if (item == list[list.Count - 1])
+                {
+                    funnyType = funnyLevelType.pos;
+                }
+                else
+                {
+                    funnyType = funnyLevelType.neutro;
+                }
+            }
+
+            dialogueSystem.PlayDialogue(dialogueSystem.cookList, item.GetComponent<MissionObjectType>().EventType(), funnyType);
+        }
+        
     }
 
     private void OnTriggerExit(Collider other)
